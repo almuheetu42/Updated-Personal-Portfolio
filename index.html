@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="5mwpnqcVoMrJ_x-SA9hpK_2mEZ8zXlY-jOUWkRXU_uQ" />
+    <title>Personal portfolio website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/d2e5d32caa.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://kit.fontawesome.com/d2e5d32caa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ------------------nav Started----------------- -->
+    <nav class="fixed w-full top-0 z-50 bg-[#1f1f1f]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#header" class="text-2xl font-bold text-white tracking-wide">
+                    Developer <span class="text-yellow-400 text-3xl">.S</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#header"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Home</a>
+                    <a href="#about"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">About</a>
+                    <a href="#skills"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">MySkills</a>
+                    <a href="#education"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Education</a>
+                    <a href="#courses"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Courses</a>
+                    <a href="#experience"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Experience</a>
+                    <a href="#portfolio"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Portfolio</a>
+                    <a href="#contact"
+                        class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#2d2d2d] border-t border-gray-700">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#header"
+                    class="block px-3 py-2 text-base font-medium text-white hover:bg-gray-700 rounded-md">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">About</a>
+                <a href="#skills"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">MySkills</a>
+                <a href="#education"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Education</a>
+                <a href="#courses"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Courses</a>
+                <a href="#experience"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Experience</a>
+                <a href="#portfolio"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Portfolio</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- ------------------nav End----------------- -->
+
+    <!-- ================= HEADER started (NEW) ================= -->
+    <header id="header" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-yellow-500/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-500/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
+            <div class="order-2 md:order-1 animate-fade-up">
+                <p class="text-yellow-400 font-medium mb-2 text-lg">Hi There <span
+                        class="animate-bounce inline-block">👋</span></p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                    I'm <span class="text-gradient">Shihab</span><br>
+                    <span class="text-2xl md:text-3xl font-light text-gray-300">Web & Mobile Developer</span>
+                </h1>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
+                    I'm an <span class="text-yellow-400 font-semibold">Associate Software Engineer</span> with
+                    <span class="text-white font-semibold">2+ years of experience</span> in building responsive websites
+                    and modern mobile applications using
+                    <span class="text-blue-400">Kotlin</span> & <span class="text-cyan-400">React Native</span>.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="https://github.com/almuheetushihab/" target="_blank"
+                        class="px-6 py-3 bg-[#333] hover:bg-gray-700 border border-gray-600 rounded-full text-white font-medium transition-all flex items-center gap-2 group">
+                        <i class="fa-brands fa-github text-xl group-hover:scale-110 transition-transform"></i> GitHub
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-full transition-all shadow-lg shadow-yellow-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Contact Me
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/almuheetu.shihab" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/almuheetushihab" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.upwork.com/freelancers/~01113ab9136bc1496c" target="_blank"><i
+                            class="fa-brands fa-upwork"></i></a>
+
+                    <a href="https://www.linkedin.com/in/md-al-muheetu-188306374/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center md:justify-end animate-fade-up"
+                style="animation-delay: 0.2s;">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div
+                        class="w-full h-full rounded-full border-4 border-yellow-500/30 overflow-hidden relative z-10 bg-[#333]">
+                        <!-- Replace with your image -->
+                        <img src="images/profetionalpic.png" alt="Shihab"
+                            class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="absolute inset-0 bg-yellow-400/20 blur-3xl -z-10 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ================= HEADER End (NEW) ================= -->
+
+    <!-- ================= ABOUT (NEW) ================= -->
+    <section id="about" class="py-20 bg-[#252525]">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-amber-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                    </div>
+                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden bg-[#333]">
+                        <!-- Replace with your image -->
+                        <img src="images/bg.jpg" alt="About Me"
+                            class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 serif-font">About <span
+                            class="text-yellow-400">Me</span></h2>
+                    <p class="text-gray-300 leading-relaxed mb-6 text-justify">
+                        Hi! I’m <strong>Al Muheetu Shihab</strong>, an Android Developer & Web Designer based in Dhaka.
+                        With <span class="text-yellow-400 font-semibold">2+ years of experience</span>, I build modern,
+                        high-quality Android applications and responsive websites using
+                        <span class="text-white">Kotlin</span>, <span class="text-white">Jetpack Compose</span>,
+                        <span class="text-white">XML</span>, and <span class="text-white">React Native</span>.
+                        I actively solve <span class="text-yellow-400 font-semibold">90+ DSA problems on
+                            HackerRank</span>
+                        to sharpen logical thinking and coding precision. I’m passionate about
+                        <span class="text-white">clean architecture</span>, efficient and user-friendly UI/UX, and
+                        building
+                        <span class="text-white">high-performance, scalable full-stack applications</span>.
+                    </p>
+
+                    <div class="flex gap-4 text-sm font-semibold text-gray-400 border-b border-gray-700 pb-2 mb-4">
+                        <span class="text-yellow-400 border-b-2 border-yellow-400 pb-2 cursor-pointer">Main
+                            Skills</span>
+                        <span class="hover:text-white cursor-pointer transition-colors">Education</span>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Android Dev (Kotlin, Jetpack Compose)</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Web Dev (HTML, CSS, JS)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ------------------about End----------------- -->
+
+    <!-- ================= MySkill SECTION ================= -->
+    <section id="skills" class="py-8">
+        <div class="bg-[#23252b] text-gray-200 min-h-screen flex items-start justify-center py-12">
+            <main class="w-full max-w-5xl mx-4">
+                <!-- header -->
+                <header class="text-center mb-8">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md">My Skills</h1>
+                    <p class="mt-2 text-sm text-gray-300">Tools & technologies I use regularly — click a card to
+                        highlight
+                        it
+                    </p>
+                    <div class="mt-3">
+                        <!-- Link to user's uploaded CV (local path as requested) -->
+                        <a href="images/CV/Almuheetu shihab_CV.pdf"
+                            class="inline-block mt-2 px-4 py-2 bg-yellow-500 text-gray-900 rounded-md font-medium hover:brightness-95"
+                            download>
+                            Download CV
+                        </a>
+                    </div>
+                </header>
+
+                <!-- highlighted skill (separate) -->
+                <section class="mb-8">
+                    <div id="highlighted"
+                        class="relative rounded-2xl p-6 md:p-8 bg-[#f6c47e]/10 border border-[#f6c47e]/8 flex items-center gap-4">
+                        <div id="highlighted-icon"
+                            class="w-20 h-20 rounded-xl bg-[#f6c47e]/20 flex items-center justify-center text-3xl">
+                            <!-- default Ubuntu icon -->
+                            <i class="fa-brands fa-ubuntu text-[#f6c47e]"></i>
+                        </div>
+                        <div>
+                            <div id="highlighted-title" class="text-xl sm:text-2xl font-semibold">Ubuntu</div>
+                            <div id="highlighted-desc" class="text-sm text-gray-300/80 mt-1 max-w-2xl">
+                                Comfortable working on Linux environments — shell, package management, server setup and
+                                deployment.
+                                (Click other cards to change this highlighted panel.)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- skills grid -->
+                <section>
+                    <section>
+                        <div class="flex flex-wrap justify-center gap-3 mb-8" id="skill-tabs">
+                            <button onclick="filterSkills('all')"
+                                class="tab-btn active px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#f6c47e] text-gray-900 shadow-[0_0_15px_rgba(246,196,126,0.4)] hover:bg-[#f6c47e]">
+                                All
+                            </button>
+
+                            <button onclick="filterSkills('frontend')"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                Frontend
+                            </button>
+
+                            <button onclick="filterSkills('mobile')"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                Mobile
+                            </button>
+
+                            <button onclick="filterSkills('backend')"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                Backend
+                            </button>
+
+                            <button onclick="filterSkills('cms')"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                Tools & Collaboration
+                            </button>
+
+                            <button onclick="filterSkills('other')"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                Other Technical Skills
+                            </button>
+                        </div>
+                        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+                            <button
+                                class="skill-card group relative rounded-xl p-6 bg-[#2b2d32] border border-transparent text-left focus:outline-none"
+                                data-category="frontend" data-title="HTML5" data-desc="Semantic HTML & modern markup"
+                                data-icon='<i class="fa-brands fa-html5 text-[#E34F26] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-html5 text-2xl text-[#E34F26]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">HTML5</div>
+                                        <div class="text-xs text-gray-400 mt-1">Semantic markup</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="CSS3" data-desc="Modern CSS, Flexbox & Grid"
+                                data-icon='<i class="fa-brands fa-css3-alt text-[#1572B6] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-css3-alt text-2xl text-[#1572B6]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">CSS3</div>
+                                        <div class="text-xs text-gray-400 mt-1">Styling & responsive layouts</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="SASS / SCSS"
+                                data-desc="Preprocessor & modular styles"
+                                data-icon='<i class="fa-brands fa-sass text-[#CC6699] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-sass text-2xl text-[#CC6699]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">SASS / SCSS</div>
+                                        <div class="text-xs text-gray-400 mt-1">Nested & maintainable CSS</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="Bootstrap"
+                                data-desc="Responsive components & utilities"
+                                data-icon='<i class="fa-brands fa-bootstrap text-[#7952B3] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-bootstrap text-2xl text-[#7952B3]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Bootstrap</div>
+                                        <div class="text-xs text-gray-400 mt-1">Grid & components</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="Tailwind CSS"
+                                data-desc="Utility-first CSS framework"
+                                data-icon='<i class="fa-solid fa-wind text-2xl text-[#38bdf8]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-wind text-2xl text-[#38bdf8]"></i></div>
+                                    <div>
+                                        <div>
+                                            <div class="text-sm font-medium">Tailwind CSS</div>
+                                            <div class="text-xs text-gray-400 mt-1">Utility classes & rapid UI</div>
+                                        </div>
+                                    </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="JavaScript" data-desc="ES6+, DOM, async/await"
+                                data-icon='<i class="fa-brands fa-js text-[#F7DF1E] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-js text-2xl text-[#F7DF1E]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">JavaScript</div>
+                                        <div class="text-xs text-gray-400 mt-1">ES6+, front-end logic</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="jQuery" data-desc="DOM helpers & legacy projects"
+                                data-icon='<i class="fa-solid fa-code text-2xl text-[#0769ad]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-code text-2xl text-[#0769ad]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">jQuery</div>
+                                        <div class="text-xs text-gray-400 mt-1">Legacy DOM & plugins</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="React" data-desc="Component-based UI"
+                                data-icon='<i class="fa-brands fa-react text-[#61DAFB] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-react text-2xl text-[#61DAFB]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">React</div>
+                                        <div class="text-xs text-gray-400 mt-1">Web & React Native</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="React Native" data-desc="Mobile apps with React"
+                                data-icon='<i class="fa-solid fa-mobile-screen text-2xl text-[#61dbfb]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-mobile-screen text-2xl text-[#61dbfb]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">React Native</div>
+                                        <div class="text-xs text-gray-400 mt-1">Cross-platform mobile</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="frontend" data-title="SEO"
+                                data-desc="Search Engine Optimization and site performance improvements."
+                                data-icon='<i class="fa-solid fa-magnifying-glass-chart text-2xl text-[#4ade80]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-magnifying-glass-chart text-2xl text-[#4ade80]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">SEO</div>
+                                        <div class="text-xs text-gray-400 mt-1">Optimization</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="Kotlin" data-desc="Kotlin for Android & backend"
+                                data-icon='<i class="fa-brands fa-android text-2xl text-[#7f52ff]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-brands fa-android text-2xl text-[#7f52ff]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Kotlin</div>
+                                        <div class="text-xs text-gray-400 mt-1">Android & multiplatform</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="Kotlin Coroutines" data-desc="Asynchronous programming"
+                                data-icon='<i class="fa-solid fa-bolt text-2xl text-[#fcd34d]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-bolt text-2xl text-[#fcd34d]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Coroutines</div>
+                                        <div class="text-xs text-gray-400 mt-1">Suspend, flows & concurrency</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="Jetpack Compose" data-desc="Modern Android UI toolkit"
+                                data-icon='<i class="fa-solid fa-layer-group text-2xl text-[#4285f4]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-layer-group text-2xl text-[#4285f4]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Jetpack Compose</div>
+                                        <div class="text-xs text-gray-400 mt-1">Declarative Android UI</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="Clean Architecture"
+                                data-desc="MVVM, Repository Pattern, ViewModel, and separation of concerns."
+                                data-icon='<i class="fa-solid fa-sitemap text-2xl text-[#a3e635]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-sitemap text-2xl text-[#a3e635]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Architecture</div>
+                                        <div class="text-xs text-gray-400 mt-1">MVVM & Clean Code</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="ViewModel" data-desc="State holder for UI"
+                                data-icon='<i class="fa-solid fa-database text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-database text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">ViewModel</div>
+                                        <div class="text-xs text-gray-400 mt-1">UI state management</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="LiveData" data-desc="Observable lifecycle-aware data"
+                                data-icon='<i class="fa-solid fa-signal text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-signal text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">LiveData</div>
+                                        <div class="text-xs text-gray-400 mt-1">Reactive UI updates</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="DataStore" data-desc="Local key-value & proto storage"
+                                data-icon='<i class="fa-solid fa-floppy-disk text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-floppy-disk text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">DataStore</div>
+                                        <div class="text-xs text-gray-400 mt-1">Local storage alternatives</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="State Management"
+                                data-desc="Managing UI state with LiveData and observable patterns."
+                                data-icon='<i class="fa-solid fa-arrows-rotate text-2xl text-[#22d3ee]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-arrows-rotate text-2xl text-[#22d3ee]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">State Mgmt</div>
+                                        <div class="text-xs text-gray-400 mt-1">LiveData & Observers</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="mobile"
+                                data-title="Clean Architecture" data-desc="Layered & testable architecture"
+                                data-icon='<i class="fa-solid fa-project-diagram text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-project-diagram text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Clean Architecture</div>
+                                        <div class="text-xs text-gray-400 mt-1">Separation of concerns</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="backend"
+                            data-title="REST APIs" data-desc="Designing & integrating RESTful services"
+                            data-icon='<i class="fa-solid fa-network-wired text-2xl"></i>'>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                    <i class="fa-solid fa-network-wired text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium">REST APIs</div>
+                                    <div class="text-xs text-gray-400 mt-1">Endpoints, auth & versioning</div>
+                                </div>
+                            </div>
+                        </button> -->
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="backend" data-title="API & Networking "
+                                data-desc="Networking with Retrofit, Moshi, OkHttp, Ajax & JSON."
+                                data-icon='<i class="fa-solid fa-globe text-2xl text-[#f97316]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-globe text-2xl text-[#f97316]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Networking</div>
+                                        <div class="text-xs text-gray-400 mt-1">REST, Retrofit & Moshi</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="WordPress" data-desc="Theme & plugin customization"
+                                data-icon='<i class="fa-brands fa-wordpress text-[#21759B] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-wordpress text-2xl text-[#21759B]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">WordPress</div>
+                                        <div class="text-xs text-gray-400 mt-1">CMS & plugin dev</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="Git" data-desc="Version control fundamentals"
+                                data-icon='<i class="fa-brands fa-git-alt text-[#F05032] text-2xl"></i>'>
+
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-git-alt text-[#F05032] text-2xl"></i>
+                                    </div>
+
+                                    <div>
+                                        <div class="text-sm font-medium">Git</div>
+                                        <div class="text-xs text-gray-400 mt-1">Branching & PRs</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="GitHub" data-desc="Repos, actions & PR reviews"
+                                data-icon='<i class="fa-brands fa-github text-2xl"></i>'>
+
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-github text-2xl"></i>
+                                    </div>
+
+                                    <div>
+                                        <div class="text-sm font-medium">GitHub</div>
+                                        <div class="text-xs text-gray-400 mt-1">CI / collaboration</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="GitLab" data-desc="CI / DevOps pipelines"
+                                data-icon='<i class="fa-brands fa-gitlab text-[#FC6D26] text-2xl"></i>'>
+
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-gitlab text-[#FC6D26] text-2xl"></i>
+                                    </div>
+
+                                    <div>
+                                        <div class="text-sm font-medium">GitLab</div>
+                                        <div class="text-xs text-gray-400 mt-1">Pipelines & infra</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="Postman" data-desc="API testing & collections"
+                                data-icon='<i class="fa-solid fa-paper-plane text-2xl text-[#ff6c37]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-paper-plane text-2xl text-[#ff6c37]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Postman</div>
+                                        <div class="text-xs text-gray-400 mt-1">API Testing</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="Slack" data-desc="Team communication and workflow integrations."
+                                data-icon='<i class="fa-brands fa-slack text-2xl text-[#4a154b]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-brands fa-slack text-2xl text-[#4a154b]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Slack</div>
+                                        <div class="text-xs text-gray-400 mt-1">Team Chat</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="cms"
+                                data-title="Jira" data-desc="Agile project management and issue tracking."
+                                data-icon='<i class="fa-brands fa-jira text-2xl text-[#0052cc]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-brands fa-jira text-2xl text-[#0052cc]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Jira</div>
+                                        <div class="text-xs text-gray-400 mt-1">Project Mgmt</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]"
+                                data-category="backend" data-title="PHP" data-desc="Server-side scripting & CMS"
+                                data-icon='<i class="fa-brands fa-php text-[#777BB4] text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-brands fa-php text-2xl text-[#777BB4]"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">PHP</div>
+                                        <div class="text-xs text-gray-400 mt-1">Backend & CMS scripting</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Localization" data-desc="i18n & translations"
+                                data-icon='<i class="fa-solid fa-globe text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-globe text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Localization</div>
+                                        <div class="text-xs text-gray-400 mt-1">i18n & translations</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Navigation" data-desc="In-app & web navigation patterns"
+                                data-icon='<i class="fa-solid fa-map-signs text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-map-signs text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Navigation</div>
+                                        <div class="text-xs text-gray-400 mt-1">Routing & UX patterns</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="UI/UX Design"
+                                data-desc="Efficient UI design, localization, and navigation logic."
+                                data-icon='<i class="fa-solid fa-pen-ruler text-2xl text-[#a78bfa]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-pen-ruler text-2xl text-[#a78bfa]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">UI/UX Design</div>
+                                        <div class="text-xs text-gray-400 mt-1">Design Principles</div>
+                                    </div>
+                                </div>
+                            </button>
+
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Logic & Algorithms"
+                                data-desc="Data structures, algorithms, and advanced problem solving."
+                                data-icon='<i class="fa-solid fa-brain text-2xl text-[#db2777]"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center"><i
+                                            class="fa-solid fa-brain text-2xl text-[#db2777]"></i></div>
+                                    <div>
+                                        <div class="text-sm font-medium">Problem Solving</div>
+                                        <div class="text-xs text-gray-400 mt-1">Logic Building</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Coding Proficiency" data-desc="Clean, readable & tested code"
+                                data-icon='<i class="fa-solid fa-code text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-code text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Coding Proficiency</div>
+                                        <div class="text-xs text-gray-400 mt-1">Best practices & patterns</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Motivation" data-desc="Self-driven & continuous learning"
+                                data-icon='<i class="fa-solid fa-award text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-award text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Motivation</div>
+                                        <div class="text-xs text-gray-400 mt-1">Continuous improvement</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Collaboration" data-desc="Teamwork & communication"
+                                data-icon='<i class="fa-solid fa-people-group text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-people-group text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Collaboration</div>
+                                        <div class="text-xs text-gray-400 mt-1">Cross-functional teams</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Communication" data-desc="Client & team communication"
+                                data-icon='<i class="fa-solid fa-comments text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-comments text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Communication</div>
+                                        <div class="text-xs text-gray-400 mt-1">Clear status & reporting</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Client Interaction" data-desc="Requirement gathering & demos"
+                                data-icon='<i class="fa-solid fa-handshake text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-handshake text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Client Interaction</div>
+                                        <div class="text-xs text-gray-400 mt-1">Requirements & demos</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Time Management" data-desc="Deliverables & deadlines"
+                                data-icon='<i class="fa-solid fa-clock text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-clock text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Time Management</div>
+                                        <div class="text-xs text-gray-400 mt-1">Planning & execution</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Adaptability" data-desc="Learning new tools & domains"
+                                data-icon='<i class="fa-solid fa-repeat text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-repeat text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Adaptability</div>
+                                        <div class="text-xs text-gray-400 mt-1">Quick onboarding</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Data Structures & Algorithms"
+                                data-desc="DSA fundamentals & complexity analysis"
+                                data-icon='<i class="fa-solid fa-layer-group text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-layer-group text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Data Structures & Algorithms</div>
+                                        <div class="text-xs text-gray-400 mt-1">Complexities & patterns</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="skill-card group relative rounded-xl p-6 bg-[#2b2d32]" data-category="other"
+                                data-title="Advanced Libraries" data-desc="Using proven libraries & frameworks"
+                                data-icon='<i class="fa-solid fa-book-open text-2xl"></i>'>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-md bg-[#ffffff]/5 flex items-center justify-center">
+                                        <i class="fa-solid fa-book-open text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium">Advanced Libraries</div>
+                                        <div class="text-xs text-gray-400 mt-1">Tooling & ecosystems</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                        </div>
+                    </section>
+
+                </section>
+            </main>
+        </div>
+    </section>
+    <!-- ================= EDUCATION SECTION ================= -->
+    <section id="education">
+        <div class="max-w-5xl mx-auto pb-8">
+            <h1
+                class="text-4xl md:text-5xl font-bold serif-font mb-12 text-white border-b border-gray-600 py-8 text-right">
+                Education</h1>
+
+            <div class="relative">
+                <!-- Wavy Vertical Line (Positioned on the RIGHT) -->
+                <div class="hidden md:block absolute right-[140px] top-2 bottom-0 wavy-line"></div>
+
+                <!-- Education Item 1: B.Sc. -->
+                <div
+                    class="timeline-item relative flex flex-col md:flex-row-reverse gap-6 md:gap-0 mb-12 cursor-pointer group">
+
+                    <!-- Date (Now on Right) -->
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
+                        <span
+                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2025</span>
+                    </div>
+
+                    <!-- Dot (On Right) -->
+                    <div
+                        class="hidden md:flex absolute right-[140px] translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+
+                    <!-- Content (Now on Left, Text Right Aligned) -->
+                    <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                            B.Sc. in CSE</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">World University of Bangladesh</h3>
+
+                        <!-- Badge (Aligned Right) -->
+                        <div class="flex items-center justify-end gap-3 mb-3 mt-1">
+                            <span class="duration-badge"><i class="fas fa-user-graduate text-[10px]"></i> Ongoing</span>
+                            <p class="text-xs text-gray-400 italic">09/2025 - Present</p>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                            Bachelor of Science in Computer Science & Engineering.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Item 2: HSC -->
+                <div
+                    class="timeline-item relative flex flex-col md:flex-row-reverse gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
+                        <span
+                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2021</span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute right-[140px] translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">HSC
+                            (Science)</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">Jahangirpur Govt. College</h3>
+                        <div class="flex items-center justify-end gap-3 mb-3 mt-1">
+                            <span class="duration-badge"><i class="fas fa-graduation-cap text-[10px]"></i> 2 yrs 3
+                                mos</span>
+                            <p class="text-xs text-gray-400 italic">01/2019 - 04/2021</p>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                            Higher Secondary Certificate in Science.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Item 3: SSC -->
+                <div
+                    class="timeline-item relative flex flex-col md:flex-row-reverse gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
+                        <span
+                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2019</span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute right-[140px] translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">SSC
+                            (Science)</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">Bagdob High School</h3>
+                        <div class="flex items-center justify-end gap-3 mb-3 mt-1">
+                            <span class="duration-badge"><i class="fas fa-school text-[10px]"></i> 5 yrs</span>
+                            <p class="text-xs text-gray-400 italic">01/2014 - 01/2019</p>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                            Secondary School Certificate in Science.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= COURSES SECTION (NEW ADDITION) ================= -->
+    <section id="courses" class="py-20 bg-[#252525]">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold serif-font text-white mb-4">Online <span
+                        class="text-yellow-400">Courses</span></h2>
+                <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Courses Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Course 1: Web Designer -->
+                <div class="course-card p-6 rounded-xl flex flex-col items-center text-center group cursor-pointer">
+                    <!-- Icon Box with Hover Effect -->
+                    <div
+                        class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
+                        <i class="fa-solid fa-paintbrush"></i>
+                    </div>
+                    <!-- Course Title -->
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Web
+                        Designer</h3>
+                    <!-- Institute/Source -->
+                    <p class="text-gray-400 text-sm">BanglaDevs, Dhaka</p>
+                </div>
+
+                <!-- Course 2: PSD to HTML -->
+                <div class="course-card p-6 rounded-xl flex flex-col items-center text-center group cursor-pointer">
+                    <div
+                        class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">PSD to
+                        HTML</h3>
+                    <p class="text-gray-400 text-sm">BanglaDevs</p>
+                </div>
+
+                <!-- Course 3: SASS & Bootstrap -->
+                <div class="course-card p-6 rounded-xl flex flex-col items-center text-center group cursor-pointer">
+                    <div
+                        class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
+                        <i class="fa-brands fa-sass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">SASS &
+                        Bootstrap</h3>
+                    <p class="text-gray-400 text-sm">BanglaDevs</p>
+                </div>
+
+                <!-- Course 4: Web Development -->
+                <div class="course-card p-6 rounded-xl flex flex-col items-center text-center group cursor-pointer">
+                    <div
+                        class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Complete
+                        Web Dev</h3>
+                    <p class="text-gray-400 text-sm">Programming-Hero</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================= COURSES SECTION End ================= -->
+
+    <!-- ================= Experience SECTION ================= -->
+    <section id="experience" class="py-20 bg-[#1e1e1e]">
+        <div class="max-w-5xl mx-auto">
+            <!-- Header -->
+            <h1 class="text-4xl md:text-5xl font-bold serif-font mb-12 text-white border-b border-gray-600 pb-4">
+                Experience</h1>
+
+            <!-- Timeline Container -->
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="hidden md:block absolute left-[140px] top-2 bottom-0 w-0.5 bg-gray-600"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <!-- Date -->
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
+                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                            2024
+                        </span>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden md:flex absolute left-[140px] -translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <!-- Content -->
+                    <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                            Associate Software Engineer</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">Softzino Technologies, Dhaka</h3>
+
+                        <!-- Duration Added Here -->
+                        <div class="flex items-center gap-3 mb-3 mt-1">
+                            <p class="text-xs text-gray-400 italic">05/2024 - Present</p>
+                            <span class="duration-badge">
+                                <i class="fas fa-clock text-[10px]"></i> 1 yr 6 mos+
+                            </span>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                            Softzino Technologies is a full-spectrum software development and IT solutions company that
+                            delivers high-quality, scalable, and sustainable software products.
+                        </p>
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                            <li>Developed Android applications using Kotlin, Jetpack Compose, XML.</li>
+                            <li>Consumed REST APIs using Retrofit with Moshi, OkHttp.</li>
+                            <li>Integrated caching mechanisms using Room & local storage.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
+                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                            2023
+                        </span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute left-[140px] -translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                            Developer</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">Upwork.com (Freelance)</h3>
+
+                        <!-- Duration Added Here -->
+                        <div class="flex items-center gap-3 mb-3 mt-1">
+                            <p class="text-xs text-gray-400 italic">01/2023 - 01/2025</p>
+                            <span class="duration-badge">
+                                <i class="fas fa-history text-[10px]"></i> 2 yrs
+                            </span>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                            UpWork – A global freelance marketplace connecting businesses with independent talent across
+                            10,000+ skills.
+                        </p>
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                            <li>Built and delivered customized web solutions to clients worldwide.</li>
+                            <li>Focused on responsive layouts, client communication, and SEO-friendly code.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
+                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                            2022
+                        </span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute left-[140px] -translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                            Designer/Developer</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">WebDev Software Solutions</h3>
+
+                        <!-- Duration Added Here -->
+                        <div class="flex items-center gap-3 mb-3 mt-1">
+                            <p class="text-xs text-gray-400 italic">11/2022 - 05/2025</p>
+                            <span class="duration-badge">
+                                <i class="fas fa-history text-[10px]"></i> 2 yrs 6 mos
+                            </span>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                            Delivering modern, scalable, and user-focused digital solutions for businesses worldwide.
+                        </p>
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                            <li>Developed responsive websites using HTML, CSS, JS, SCSS, and jQuery.</li>
+                            <li>Implemented client projects using WordPress and WooCommerce.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
+                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                            2022
+                        </span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute left-[140px] -translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                            Designer Intern</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">Bdevs</h3>
+
+                        <!-- Duration Added Here -->
+                        <div class="flex items-center gap-3 mb-3 mt-1">
+                            <p class="text-xs text-gray-400 italic">08/2022 - 10/2022</p>
+                            <span class="duration-badge">
+                                <i class="fas fa-hourglass-half text-[10px]"></i> 3 mos
+                            </span>
+                        </div>
+
+                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                            Assisted in UI/UX development with SCSS and Bootstrap. Tested for cross-browser
+                            compatibility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 5 -->
+                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
+                    <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
+                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                            2022
+                        </span>
+                    </div>
+                    <div
+                        class="hidden md:flex absolute left-[140px] -translate-x-1/2 top-1 items-center justify-center z-10">
+                        <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
+                    </div>
+                    <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
+                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                            Design Trainee</h2>
+                        <h3 class="text-lg text-gray-300 mt-1">WebDev Software Solutions</h3>
+
+                        <!-- Duration Added Here -->
+                        <div class="flex items-center gap-3 mb-3 mt-1">
+                            <p class="text-xs text-gray-400 italic">04/2022 - 07/2022</p>
+                            <span class="duration-badge">
+                                <i class="fas fa-hourglass-end text-[10px]"></i> 4 mos
+                            </span>
+                        </div>
+
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                            <li>Practiced real-life projects with HTML, CSS, and JavaScript.</li>
+                            <li>Built adaptive and mobile-friendly interfaces.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+    <!-- ================= Additonal SECTION ================= -->
+    <section id="additional" class="pb-20 bg-[#1e1e1e]">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Additional Sections Grid (Text Right Aligned) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-gray-600 text-right"
+                dir="rtl">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 serif-font">Hobbies & Interests</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Exploring
+                            Full-stack</span>
+                        <span
+                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Coding
+                            Challenges</span>
+                        <span
+                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Competitive
+                            Programming</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 serif-font">Languages</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between group">
+                            <span class="text-gray-300">Bengali</span>
+                            <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
+                                <div
+                                    class="bg-yellow-400 h-full w-full transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <span class="text-gray-300">English</span>
+                            <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
+                                <div
+                                    class="bg-yellow-400 h-full w-[85%] transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out delay-100">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <span class="text-gray-300">Hindi</span>
+                            <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
+                                <div
+                                    class="bg-yellow-400 h-full w-[75%] transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out delay-200">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO (NEW) ================= -->
+    <section id="portfolio" class="py-20 bg-[#252525]">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold serif-font mb-12 text-white border-b border-gray-600 pb-4">My
+                <span class="text-yellow-400">Portfolio</span>
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/Gardmia-2.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=Gardomia" alt="Gardomia">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">Gardomia</h3>
+                        <p class="text-gray-300 text-sm mb-4">A description of the project goes here.</p>
+                        <a href="https://almuheetu.github.io/gardomia/" target="_blank"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/Construction.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=Construction" alt="Construction">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">Construction</h3>
+                        <p class="text-gray-300 text-sm mb-4">Responsive construction website.</p>
+                        <a href="https://almuheetu.github.io/Construction/" target="_blank"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/PioHost.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=PioHost" alt="PioHost">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">PioHost</h3>
+                        <p class="text-gray-300 text-sm mb-4">Web hosting service landing page.</p>
+                        <a href="https://almuheetu.github.io/piohost/" target="_blank"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/Xisen.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=Xisen" alt="Xisen">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">Xisen</h3>
+                        <p class="text-gray-300 text-sm mb-4">E-commerce or creative agency site.</p>
+                        <a href="https://almuheetu.github.io/xisen/" target="_blank"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/Gardomia.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=Store" alt="Store">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">Gardomia Store</h3>
+                        <p class="text-gray-300 text-sm mb-4">Using HTML, CSS, JS, SCSS, Bootstrap.</p>
+                        <a href="#"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="work-card bg-[#2d2d2d] group">
+                    <!-- Placeholder Image - Replace with images/Fundo.png -->
+                    <img src="https://placehold.co/600x400/2d2d2d/FFF?text=Fundo" alt="Fundo">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold text-white mb-2">Fundo</h3>
+                        <p class="text-gray-300 text-sm mb-4">Crowdfunding or charity platform.</p>
+                        <a href="https://almuheetu.github.io/fundu/" target="_blank"
+                            class="inline-flex items-center justify-center w-10 h-10 bg-white text-yellow-500 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- See More Button -->
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-block px-8 py-3 bg-transparent border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300">
+                    See More
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ------------------portfolio End----------------- -->
+
+    <!-- ------------------Contact started----------------- -->
+    <section id="contact" class="py-20 bg-[#252525]">
+        <div class="max-w-6xl mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row gap-12 justify-between">
+
+                <!-- Contact Left -->
+                <div class="contact-left w-full md:w-1/3">
+                    <h1 class="sub-title">Contact <span>Me</span></h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> almuheetu@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> +88 01789803342</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/almuheetu.shihab" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/almuheetushihab" target="_blank"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.upwork.com/freelancers/~01113ab9136bc1496c" target="_blank"><i
+                                class="fa-brands fa-upwork"></i></a>
+
+                        <a href="https://www.linkedin.com/in/md-al-muheetu-188306374/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+
+                    <a href="images/CV/Almuheetu shihab_CV.pdf" target="_blank" class="btn-2 h-btn">
+                        <span><i class="fa-solid fa-cloud-arrow-down"></i></span> Download CV
+                    </a>
+                </div>
+
+                <!-- Contact Right (Form) -->
+                <div class="contact-right w-full md:w-3/5">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn-2 w-full md:w-auto">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer / Copyright -->
+        <div class="copyright">
+            Copyright © Shihab | Made by <i class="fa-solid fa-user"></i> Almuheetu
+        </div>
+    </section>
+    <!-- ------------------Contact End----------------- -->
+
+    <!-- ---------------- Add android section---------------- -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
