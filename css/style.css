@@ -267,15 +267,20 @@ form .btn-2 {
 	font-size: 18px;
 	margin-top: 20px;
 	cursor: pointer;
-	background: #ff004f;
-	color: #fff;
+	background: #facc15;
+	color: #333;
 	border: none;
 	border-radius: 6px;
 	transition: 0.5s;
 }
 
 form .btn-2:hover {
-	background: #d40042;
+	background: #eab308;
+	transform: scale(1.05);
+	color: #fff;
+	color: #fff;
+	box-shadow: 0 0 20px #ff004f;
+	transform: scale(1.1);
 }
 
 /* Buttons & Footer */
