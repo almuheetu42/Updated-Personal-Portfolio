@@ -20,6 +20,54 @@ body {
 	overflow-x: hidden;
 }
 
+:root {
+	--accent-color: #facc15;
+	--accent-color-dark: #eab308;
+	--accent-contrast: #1f1f1f;
+	--surface-hover: #3a3a3a;
+	--transition-base: all 0.3s ease;
+}
+
+button,
+a {
+	transition: var(--transition-base);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+	outline: 2px solid var(--accent-color);
+	outline-offset: 3px;
+}
+
+.btn-2,
+.h-btn,
+#mobile-menu-btn,
+.tab-btn,
+.work-link a,
+.social-icons a,
+#mobile-menu a,
+nav .md\:flex a,
+#skill-tabs button {
+	transition: var(--transition-base);
+}
+
+.tab-btn.active,
+#skill-tabs .active {
+	background: var(--accent-color) !important;
+	color: var(--accent-contrast) !important;
+	border-color: var(--accent-color) !important;
+	box-shadow: 0 0 15px rgba(250, 204, 21, 0.35);
+}
+
+.skill-card.card-active,
+.skill-card.active {
+	background: #3a3d42;
+	border-color: rgba(250, 204, 21, 0.55);
+	box-shadow: 0 10px 30px rgba(250, 204, 21, 0.14);
+}
+
 .serif-font {
 	font-family: 'Merriweather', serif;
 }
@@ -267,15 +315,20 @@ form .btn-2 {
 	font-size: 18px;
 	margin-top: 20px;
 	cursor: pointer;
-	background: #ff004f;
-	color: #fff;
+	background: #facc15;
+	color: #333;
 	border: none;
 	border-radius: 6px;
 	transition: 0.5s;
 }
 
 form .btn-2:hover {
-	background: #d40042;
+	background: #eab308;
+	transform: scale(1.05);
+	color: #fff;
+	color: #fff;
+	box-shadow: 0 0 20px #ff004f;
+	transform: scale(1.1);
 }
 
 /* Buttons & Footer */
@@ -283,20 +336,22 @@ form .btn-2:hover {
 	display: inline-block;
 	padding: 14px 50px;
 	background: transparent;
-	color: #ff004f;
-	border: 2px solid #ff004f;
+	color: var(--accent-color);
+	border: 2px solid var(--accent-color);
 	border-radius: 6px;
 	font-size: 18px;
 	font-weight: 600;
-	transition: all .50s ease;
+	transition: var(--transition-base);
 	text-decoration: none;
 }
 
-.h-btn:hover {
-	background: #ff004f;
-	color: #fff;
-	box-shadow: 0 0 20px #ff004f;
-	transform: scale(1.1);
+.h-btn:hover,
+.h-btn:focus-visible,
+.h-btn.active {
+	background: var(--accent-color);
+	color: var(--accent-contrast);
+	box-shadow: 0 0 20px rgba(250, 204, 21, 0.28);
+	transform: translateY(-2px);
 }
 
 .copyright {
@@ -422,7 +477,7 @@ form .btn-2:hover {
 
 .social-icons a:hover {
 	transform: translateY(-5px);
-	color: #facc15;
+	color: var(--accent-color);
 }
 
 /* Contact Form */
@@ -450,21 +505,26 @@ form textarea:focus {
 .btn-2 {
 	display: inline-block;
 	padding: 14px 40px;
-	background: #facc15;
-	color: #1f1f1f;
+	background: var(--accent-color);
+	color: var(--accent-contrast);
 	font-weight: 600;
 	border-radius: 6px;
 	text-decoration: none;
-	transition: 0.3s;
+	transition: var(--transition-base);
 	border: none;
 	cursor: pointer;
 	font-size: 16px;
 	margin-top: 20px;
+	box-shadow: 0 0 0 rgba(250, 204, 21, 0);
 }
 
-.btn-2:hover {
-	background: #eab308;
-	transform: scale(1.05);
+.btn-2:hover,
+.btn-2:focus-visible,
+.btn-2.active {
+	background: var(--accent-color-dark);
+	color: #111;
+	box-shadow: 0 0 20px rgba(250, 204, 21, 0.28);
+	transform: translateY(-2px);
 }
 
 .h-btn.btn-2 {
@@ -587,6 +647,8 @@ form textarea:focus {
 }
 
 .card-active {
+	background: #3a3d42;
+	border-color: rgba(250, 204, 21, 0.55);
 	box-shadow: 0 10px 30px rgba(255, 191, 64, 0.18), inset 0 2px 0 rgba(255, 255, 255, 0.02);
 	transform: translateY(-6px);
 }

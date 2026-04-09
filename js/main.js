@@ -112,13 +112,59 @@
                     }
                 });
                 
-                // Note: Ensure tab buttons have class 'tab-btn'
                 const allBtns = document.querySelectorAll('.tab-btn');
                 allBtns.forEach(btn => {
-                    btn.className = "tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white cursor-pointer";
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
                 });
+
                 if (clickedBtn) {
-                    clickedBtn.className = "tab-btn active px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#f6c47e] text-gray-900 shadow-[0_0_15px_rgba(246,196,126,0.4)] hover:bg-[#f6c47e] cursor-pointer";
+                    clickedBtn.classList.add('active');
+                    clickedBtn.setAttribute('aria-pressed', 'true');
                 }
+            };
+
+            // Skill tab active state fix
+            const skillTabButtons = document.querySelectorAll('.tab-btn');
+            skillTabButtons.forEach(tabBtn => {
+                tabBtn.addEventListener('click', () => {
+                    const match = tabBtn.getAttribute('onclick')?.match(/filterSkills\('([^']+)'\)/);
+                    const category = match ? match[1] : 'all';
+                    window.filterSkills(category, tabBtn);
+                });
+            });
+
+            // Nav active section highlight
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            const sections = [...navLinks]
+                .map(link => document.querySelector(link.getAttribute('href')))
+                .filter(Boolean);
+
+            function updateActiveNavLink() {
+                let currentSectionId = sections[0]?.id || '';
+
+                sections.forEach(section => {
+                    const top = section.offsetTop - 120;
+                    const bottom = top + section.offsetHeight;
+                    if (window.scrollY >= top && window.scrollY < bottom) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${currentSectionId}`;
+                    link.classList.toggle('active', isActive);
+
+                    if (link.closest('#mobile-menu')) {
+                        link.classList.toggle('bg-gray-700', isActive);
+                        link.classList.toggle('text-white', isActive);
+                        link.classList.toggle('text-yellow-400', isActive);
+                    } else {
+                        link.classList.toggle('text-yellow-400', isActive);
+                    }
+                });
             }
+
+            updateActiveNavLink();
+            window.addEventListener('scroll', updateActiveNavLink);
         });
