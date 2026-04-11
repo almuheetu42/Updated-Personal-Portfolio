@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
 
             // ===================================
             // 0. THEME TOGGLE (NEW)
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const handleThemeToggle = () => {
                 document.body.classList.toggle('light-mode');
+                document.body.classList.toggle('dark');
                 const isLight = document.body.classList.contains('light-mode');
                 
                 if (isLight) {
@@ -166,6 +167,49 @@ document.addEventListener('DOMContentLoaded', () => {
                     clickedBtn.classList.add('active');
                     clickedBtn.setAttribute('aria-pressed', 'true');
                 }
+
+                // Update highlighted section based on the selected category
+                const categoryDetails = {
+                    'all': {
+                        title: 'All Skills',
+                        desc: 'A comprehensive view of all my technical tools and technologies. Click individual cards for more details.',
+                        icon: '<i class="fa-solid fa-layer-group text-2xl text-[#f6c47e]"></i>'
+                    },
+                    'frontend': {
+                        title: 'Frontend Development',
+                        desc: 'Building responsive and interactive user interfaces using HTML, CSS, JavaScript, and modern frameworks.',
+                        icon: '<i class="fa-solid fa-desktop text-2xl text-[#38bdf8]"></i>'
+                    },
+                    'mobile': {
+                        title: 'Mobile Development',
+                        desc: 'Creating high-performance, cross-platform and native mobile applications with Kotlin, Compose, and React Native.',
+                        icon: '<i class="fa-solid fa-mobile-screen text-2xl text-[#a3e635]"></i>'
+                    },
+                    'backend': {
+                        title: 'Backend & API',
+                        desc: 'Designing and integrating robust APIs, networking, and server-side logic.',
+                        icon: '<i class="fa-solid fa-server text-2xl text-[#f97316]"></i>'
+                    },
+                    'cms': {
+                        title: 'Tools & Collaboration',
+                        desc: 'Version control, project management, communication, and collaborative workflow tools.',
+                        icon: '<i class="fa-solid fa-toolbox text-2xl text-[#fcd34d]"></i>'
+                    },
+                    'other': {
+                        title: 'Other Technical Skills',
+                        desc: 'Problem-solving, UI/UX principles, algorithms, and soft skills essential for software engineering.',
+                        icon: '<i class="fa-solid fa-brain text-2xl text-[#db2777]"></i>'
+                    }
+                };
+
+                if (categoryDetails[category]) {
+                    setHighlighted(
+                        categoryDetails[category].title,
+                        categoryDetails[category].desc,
+                        categoryDetails[category].icon,
+                        null
+                    );
+                }
             };
 
             // Skill tab active state fix
@@ -213,30 +257,61 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('scroll', updateActiveNavLink);
 
             // ===================================
-            // 4. PORTFOLIO TAB FILTERING (NEW)
+            // 4. PORTFOLIO TAB FILTERING & SHOW MORE
             // ===================================
             const portfolioTabs = document.querySelectorAll('.portfolio-tab-btn');
             const portfolioGrid = document.getElementById('portfolio-grid');
-            const portfolioItems = portfolioGrid ? Array.from(portfolioGrid.children) : [];
+            const portfolioItems = portfolioGrid ? Array.from(portfolioGrid.children).filter(el => el.classList.contains('work-card')) : [];
+            const showMoreBtn = document.getElementById('show-more-portfolio-btn');
+
+            let currentFilter = 'all';
+            let itemsToShow = 9;
+            const step = 9;
+
+            function updatePortfolioDisplay() {
+                if (!portfolioGrid) return;
+                
+                const filteredItems = portfolioItems.filter(item => {
+                    const category = item.getAttribute('data-category');
+                    return currentFilter === 'all' || category === currentFilter;
+                });
+
+                portfolioItems.forEach(item => item.style.display = 'none');
+
+                filteredItems.forEach((item, index) => {
+                    if (index < itemsToShow) {
+                        item.style.display = 'block';
+                    }
+                });
+
+                if (showMoreBtn) {
+                    if (filteredItems.length > itemsToShow) {
+                        showMoreBtn.style.display = 'inline-block';
+                    } else {
+                        showMoreBtn.style.display = 'none';
+                    }
+                }
+            }
 
             if(portfolioTabs.length > 0 && portfolioItems.length > 0) {
+                updatePortfolioDisplay();
+
                 portfolioTabs.forEach(tab => {
                     tab.addEventListener('click', function() {
                         portfolioTabs.forEach(t => t.classList.remove('active'));
                         this.classList.add('active');
 
-                        const filter = this.getAttribute('data-filter');
-
-                        portfolioItems.forEach(item => {
-                            const category = item.getAttribute('data-category');
-                            
-                            if (filter === 'all' || filter === category) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        });
+                        currentFilter = this.getAttribute('data-filter');
+                        itemsToShow = step;
+                        updatePortfolioDisplay();
                     });
+                });
+            }
+
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', () => {
+                    itemsToShow += step;
+                    updatePortfolioDisplay();
                 });
             }
 
@@ -287,3 +362,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
