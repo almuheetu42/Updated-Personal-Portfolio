@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
 
             // ===================================
             // 0. THEME TOGGLE (NEW)
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const handleThemeToggle = () => {
                 document.body.classList.toggle('light-mode');
+                document.body.classList.toggle('dark');
                 const isLight = document.body.classList.contains('light-mode');
                 
                 if (isLight) {
@@ -287,3 +288,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+

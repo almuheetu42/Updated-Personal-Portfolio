@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,6 +19,8 @@
         // Anti-FOUC script
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-mode');
+        } else {
+            document.body.classList.add('dark');
         }
     </script>
     <!-- ------------------nav Started----------------- -->
@@ -98,13 +100,13 @@
             <div class="order-2 md:order-1 animate-fade-up">
                 <p class="text-yellow-400 font-medium mb-2 text-lg">Hi There <span
                         class="animate-bounce inline-block">👋</span></p>
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
                     I'm <span class="text-gradient">Shihab</span><br>
-                    <span class="text-2xl md:text-3xl font-light text-gray-300">Web & Mobile Developer</span>
+                    <span class="text-2xl md:text-3xl font-light text-gray-700 dark:text-gray-300">Web & Mobile Developer</span>
                 </h1>
-                <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
+                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
                     I'm an <span class="text-yellow-400 font-semibold">Associate Software Engineer</span> with
-                    <span class="text-white font-semibold">2+ years of experience</span> in building responsive websites
+                    <span class="text-gray-900 dark:text-white font-semibold">2+ years of experience</span> in building responsive websites
                     and modern mobile applications using
                     <span class="text-blue-400">Kotlin</span> & <span class="text-cyan-400">React Native</span>.
                 </p>
@@ -159,22 +161,22 @@
                     </div>
                 </div>
                 <div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 serif-font">About <span
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 serif-font">About <span
                             class="text-yellow-400">Me</span></h2>
-                    <p class="text-gray-300 leading-relaxed mb-6 text-justify">
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-justify">
                         Hi! I'm <strong>Al Muheetu Shihab</strong>, a Dynamic Software Engineer based in Dhaka with
                         <span class="text-yellow-400 font-semibold">3+ years of total experience</span> in the tech
                         industry.
                         For the past <span class="text-yellow-400 font-semibold">2 years</span>, I've specialized in
-                        <span class="text-white">Android</span> and <span class="text-white">React Native</span>
+                        <span class="text-gray-900 dark:text-white">Android</span> and <span class="text-gray-900 dark:text-white">React Native</span>
                         development,
                         building high-performance applications using
-                        <span class="text-white">Kotlin</span> and <span class="text-white">Jetpack Compose</span>.
+                        <span class="text-gray-900 dark:text-white">Kotlin</span> and <span class="text-gray-900 dark:text-white">Jetpack Compose</span>.
                         I bring a proven track record of transitioning from
-                        <span class="text-white">full-stack web development</span> to mobile platforms, with a deep
-                        understanding of <span class="text-white">UI/UX</span>, <span class="text-white">API
+                        <span class="text-gray-900 dark:text-white">full-stack web development</span> to mobile platforms, with a deep
+                        understanding of <span class="text-gray-900 dark:text-white">UI/UX</span>, <span class="text-white">API
                             integration</span>,
-                        and <span class="text-white">clean architecture</span>. I actively solve
+                        and <span class="text-gray-900 dark:text-white">clean architecture</span>. I actively solve
                         <span class="text-yellow-400 font-semibold">90+ DSA problems on HackerRank</span>
                         to continuously sharpen my logical thinking and coding precision.
                     </p>
@@ -200,8 +202,8 @@
             <main class="w-full max-w-5xl mx-4">
                 <!-- header -->
                 <header class="text-center mb-8">
-                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md">My Skills</h1>
-                    <p class="mt-2 text-sm text-gray-300">Tools & technologies I use regularly — click a card to
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white drop-shadow-md">My Skills</h1>
+                    <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Tools & technologies I use regularly — click a card to
                         highlight
                         it
                     </p>
@@ -226,7 +228,7 @@
                         </div>
                         <div>
                             <div id="highlighted-title" class="text-xl sm:text-2xl font-semibold">Ubuntu</div>
-                            <div id="highlighted-desc" class="text-sm text-gray-300/80 mt-1 max-w-2xl">
+                            <div id="highlighted-desc" class="text-sm text-gray-700/80 dark:text-gray-300/80 mt-1 max-w-2xl">
                                 Comfortable working on Linux environments — shell, package management, server setup and
                                 deployment.
                                 (Click other cards to change this highlighted panel.)
@@ -245,27 +247,27 @@
                             </button>
 
                             <button onclick="filterSkills('frontend')"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-600 dark:text-gray-400 border border-gray-400 dark:border-gray-700 hover:border-[#f6c47e] hover:text-gray-900 dark:hover:text-white">
                                 Frontend
                             </button>
 
                             <button onclick="filterSkills('mobile')"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-600 dark:text-gray-400 border border-gray-400 dark:border-gray-700 hover:border-[#f6c47e] hover:text-gray-900 dark:hover:text-white">
                                 Mobile
                             </button>
 
                             <button onclick="filterSkills('backend')"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-600 dark:text-gray-400 border border-gray-400 dark:border-gray-700 hover:border-[#f6c47e] hover:text-gray-900 dark:hover:text-white">
                                 Backend
                             </button>
 
                             <button onclick="filterSkills('cms')"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-600 dark:text-gray-400 border border-gray-400 dark:border-gray-700 hover:border-[#f6c47e] hover:text-gray-900 dark:hover:text-white">
                                 Tools & Collaboration
                             </button>
 
                             <button onclick="filterSkills('other')"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-400 border border-gray-700 hover:border-[#f6c47e] hover:text-white">
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#2b2d32] text-gray-600 dark:text-gray-400 border border-gray-400 dark:border-gray-700 hover:border-[#f6c47e] hover:text-gray-900 dark:hover:text-white">
                                 Other Technical Skills
                             </button>
                         </div>
@@ -281,7 +283,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">HTML5</div>
-                                        <div class="text-xs text-gray-400 mt-1">Semantic markup</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Semantic markup</div>
                                     </div>
                                 </div>
                             </button>
@@ -295,7 +297,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">CSS3</div>
-                                        <div class="text-xs text-gray-400 mt-1">Styling & responsive layouts</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Styling & responsive layouts</div>
                                     </div>
                                 </div>
                             </button>
@@ -310,7 +312,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">SASS / SCSS</div>
-                                        <div class="text-xs text-gray-400 mt-1">Nested & maintainable CSS</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Nested & maintainable CSS</div>
                                     </div>
                                 </div>
                             </button>
@@ -325,7 +327,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Bootstrap</div>
-                                        <div class="text-xs text-gray-400 mt-1">Grid & components</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Grid & components</div>
                                     </div>
                                 </div>
                             </button>
@@ -340,7 +342,7 @@
                                     <div>
                                         <div>
                                             <div class="text-sm font-medium">Tailwind CSS</div>
-                                            <div class="text-xs text-gray-400 mt-1">Utility classes & rapid UI</div>
+                                            <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Utility classes & rapid UI</div>
                                         </div>
                                     </div>
                             </button>
@@ -354,7 +356,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">JavaScript</div>
-                                        <div class="text-xs text-gray-400 mt-1">ES6+, front-end logic</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">ES6+, front-end logic</div>
                                     </div>
                                 </div>
                             </button>
@@ -367,7 +369,7 @@
                                             class="fa-solid fa-code text-2xl text-[#0769ad]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">jQuery</div>
-                                        <div class="text-xs text-gray-400 mt-1">Legacy DOM & plugins</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Legacy DOM & plugins</div>
                                     </div>
                                 </div>
                             </button>
@@ -381,7 +383,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">React</div>
-                                        <div class="text-xs text-gray-400 mt-1">Web & React Native</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Web & React Native</div>
                                     </div>
                                 </div>
                             </button>
@@ -395,7 +397,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">React Native</div>
-                                        <div class="text-xs text-gray-400 mt-1">Cross-platform mobile</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Cross-platform mobile</div>
                                     </div>
                                 </div>
                             </button>
@@ -410,7 +412,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">SEO</div>
-                                        <div class="text-xs text-gray-400 mt-1">Optimization</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Optimization</div>
                                     </div>
                                 </div>
                             </button>
@@ -425,7 +427,7 @@
                                             class="fa-brands fa-android text-2xl text-[#7f52ff]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Kotlin</div>
-                                        <div class="text-xs text-gray-400 mt-1">Android & multiplatform</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Android & multiplatform</div>
                                     </div>
                                 </div>
                             </button>
@@ -438,7 +440,7 @@
                                             class="fa-solid fa-bolt text-2xl text-[#fcd34d]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Coroutines</div>
-                                        <div class="text-xs text-gray-400 mt-1">Suspend, flows & concurrency</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Suspend, flows & concurrency</div>
                                     </div>
                                 </div>
                             </button>
@@ -451,7 +453,7 @@
                                             class="fa-solid fa-layer-group text-2xl text-[#4285f4]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Jetpack Compose</div>
-                                        <div class="text-xs text-gray-400 mt-1">Declarative Android UI</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Declarative Android UI</div>
                                     </div>
                                 </div>
                             </button>
@@ -465,7 +467,7 @@
                                             class="fa-solid fa-sitemap text-2xl text-[#a3e635]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Architecture</div>
-                                        <div class="text-xs text-gray-400 mt-1">MVVM & Clean Code</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">MVVM & Clean Code</div>
                                     </div>
                                 </div>
                             </button>
@@ -479,7 +481,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">ViewModel</div>
-                                        <div class="text-xs text-gray-400 mt-1">UI state management</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">UI state management</div>
                                     </div>
                                 </div>
                             </button>
@@ -493,7 +495,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">LiveData</div>
-                                        <div class="text-xs text-gray-400 mt-1">Reactive UI updates</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Reactive UI updates</div>
                                     </div>
                                 </div>
                             </button>
@@ -507,7 +509,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">DataStore</div>
-                                        <div class="text-xs text-gray-400 mt-1">Local storage alternatives</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Local storage alternatives</div>
                                     </div>
                                 </div>
                             </button>
@@ -521,7 +523,7 @@
                                             class="fa-solid fa-arrows-rotate text-2xl text-[#22d3ee]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">State Mgmt</div>
-                                        <div class="text-xs text-gray-400 mt-1">LiveData & Observers</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">LiveData & Observers</div>
                                     </div>
                                 </div>
                             </button>
@@ -535,7 +537,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Clean Architecture</div>
-                                        <div class="text-xs text-gray-400 mt-1">Separation of concerns</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Separation of concerns</div>
                                     </div>
                                 </div>
                             </button>
@@ -549,7 +551,7 @@
                                 </div>
                                 <div>
                                     <div class="text-sm font-medium">REST APIs</div>
-                                    <div class="text-xs text-gray-400 mt-1">Endpoints, auth & versioning</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Endpoints, auth & versioning</div>
                                 </div>
                             </div>
                         </button> -->
@@ -563,7 +565,7 @@
                                             class="fa-solid fa-globe text-2xl text-[#f97316]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Networking</div>
-                                        <div class="text-xs text-gray-400 mt-1">REST, Retrofit & Moshi</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">REST, Retrofit & Moshi</div>
                                     </div>
                                 </div>
                             </button>
@@ -579,7 +581,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">WordPress</div>
-                                        <div class="text-xs text-gray-400 mt-1">CMS & plugin dev</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">CMS & plugin dev</div>
                                     </div>
                                 </div>
                             </button>
@@ -595,7 +597,7 @@
 
                                     <div>
                                         <div class="text-sm font-medium">Git</div>
-                                        <div class="text-xs text-gray-400 mt-1">Branching & PRs</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Branching & PRs</div>
                                     </div>
                                 </div>
                             </button>
@@ -612,7 +614,7 @@
 
                                     <div>
                                         <div class="text-sm font-medium">GitHub</div>
-                                        <div class="text-xs text-gray-400 mt-1">CI / collaboration</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">CI / collaboration</div>
                                     </div>
                                 </div>
                             </button>
@@ -628,7 +630,7 @@
 
                                     <div>
                                         <div class="text-sm font-medium">GitLab</div>
-                                        <div class="text-xs text-gray-400 mt-1">Pipelines & infra</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Pipelines & infra</div>
                                     </div>
                                 </div>
                             </button>
@@ -641,7 +643,7 @@
                                             class="fa-solid fa-paper-plane text-2xl text-[#ff6c37]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Postman</div>
-                                        <div class="text-xs text-gray-400 mt-1">API Testing</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">API Testing</div>
                                     </div>
                                 </div>
                             </button>
@@ -655,7 +657,7 @@
                                             class="fa-brands fa-slack text-2xl text-[#4a154b]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Slack</div>
-                                        <div class="text-xs text-gray-400 mt-1">Team Chat</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Team Chat</div>
                                     </div>
                                 </div>
                             </button>
@@ -668,7 +670,7 @@
                                             class="fa-brands fa-jira text-2xl text-[#0052cc]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Jira</div>
-                                        <div class="text-xs text-gray-400 mt-1">Project Mgmt</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Project Mgmt</div>
                                     </div>
                                 </div>
                             </button>
@@ -683,7 +685,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">PHP</div>
-                                        <div class="text-xs text-gray-400 mt-1">Backend & CMS scripting</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Backend & CMS scripting</div>
                                     </div>
                                 </div>
                             </button>
@@ -698,7 +700,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Localization</div>
-                                        <div class="text-xs text-gray-400 mt-1">i18n & translations</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">i18n & translations</div>
                                     </div>
                                 </div>
                             </button>
@@ -712,7 +714,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Navigation</div>
-                                        <div class="text-xs text-gray-400 mt-1">Routing & UX patterns</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Routing & UX patterns</div>
                                     </div>
                                 </div>
                             </button>
@@ -726,7 +728,7 @@
                                             class="fa-solid fa-pen-ruler text-2xl text-[#a78bfa]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">UI/UX Design</div>
-                                        <div class="text-xs text-gray-400 mt-1">Design Principles</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Design Principles</div>
                                     </div>
                                 </div>
                             </button>
@@ -741,7 +743,7 @@
                                             class="fa-solid fa-brain text-2xl text-[#db2777]"></i></div>
                                     <div>
                                         <div class="text-sm font-medium">Problem Solving</div>
-                                        <div class="text-xs text-gray-400 mt-1">Logic Building</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Logic Building</div>
                                     </div>
                                 </div>
                             </button>
@@ -755,7 +757,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Coding Proficiency</div>
-                                        <div class="text-xs text-gray-400 mt-1">Best practices & patterns</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Best practices & patterns</div>
                                     </div>
                                 </div>
                             </button>
@@ -769,7 +771,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Motivation</div>
-                                        <div class="text-xs text-gray-400 mt-1">Continuous improvement</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Continuous improvement</div>
                                     </div>
                                 </div>
                             </button>
@@ -783,7 +785,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Collaboration</div>
-                                        <div class="text-xs text-gray-400 mt-1">Cross-functional teams</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Cross-functional teams</div>
                                     </div>
                                 </div>
                             </button>
@@ -797,7 +799,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Communication</div>
-                                        <div class="text-xs text-gray-400 mt-1">Clear status & reporting</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Clear status & reporting</div>
                                     </div>
                                 </div>
                             </button>
@@ -811,7 +813,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Client Interaction</div>
-                                        <div class="text-xs text-gray-400 mt-1">Requirements & demos</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Requirements & demos</div>
                                     </div>
                                 </div>
                             </button>
@@ -825,7 +827,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Time Management</div>
-                                        <div class="text-xs text-gray-400 mt-1">Planning & execution</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Planning & execution</div>
                                     </div>
                                 </div>
                             </button>
@@ -839,7 +841,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Adaptability</div>
-                                        <div class="text-xs text-gray-400 mt-1">Quick onboarding</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Quick onboarding</div>
                                     </div>
                                 </div>
                             </button>
@@ -854,7 +856,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Data Structures & Algorithms</div>
-                                        <div class="text-xs text-gray-400 mt-1">Complexities & patterns</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Complexities & patterns</div>
                                     </div>
                                 </div>
                             </button>
@@ -868,7 +870,7 @@
                                     </div>
                                     <div>
                                         <div class="text-sm font-medium">Advanced Libraries</div>
-                                        <div class="text-xs text-gray-400 mt-1">Tooling & ecosystems</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Tooling & ecosystems</div>
                                     </div>
                                 </div>
                             </button>
@@ -884,7 +886,7 @@
     <section id="education">
         <div class="max-w-5xl mx-auto py-8">
             <h1
-                class="text-4xl md:text-5xl font-bold serif-font mb-12 text-white border-b border-gray-600 py-8 text-right">
+                class="text-4xl md:text-5xl font-bold serif-font mb-12 text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 py-8 text-right">
                 Education</h1>
 
             <div class="relative">
@@ -898,7 +900,7 @@
                     <!-- Date (Now on Right) -->
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
                         <span
-                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2025</span>
+                            class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2025</span>
                     </div>
 
                     <!-- Dot (On Right) -->
@@ -909,17 +911,17 @@
 
                     <!-- Content (Now on Left, Text Right Aligned) -->
                     <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">
                             B.Sc. in CSE</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">World University of Bangladesh</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">World University of Bangladesh</h3>
 
                         <!-- Badge (Aligned Right) -->
                         <div class="flex items-center justify-end gap-3 mb-3 mt-1">
                             <span class="duration-badge"><i class="fas fa-user-graduate text-[10px]"></i> Ongoing</span>
-                            <p class="text-xs text-gray-400 italic">09/2025 - Present</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">09/2025 - Present</p>
                         </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed serif-font">
                             Bachelor of Science in Computer Science & Engineering.
                         </p>
                     </div>
@@ -930,22 +932,22 @@
                     class="timeline-item relative flex flex-col md:flex-row-reverse gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
                         <span
-                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2021</span>
+                            class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2021</span>
                     </div>
                     <div
                         class="hidden md:flex absolute right-[140px] translate-x-1/2 top-1 items-center justify-center z-10">
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">HSC
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">HSC
                             (Science)</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">Jahangirpur Govt. College</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">Jahangirpur Govt. College</h3>
                         <div class="flex items-center justify-end gap-3 mb-3 mt-1">
                             <span class="duration-badge"><i class="fas fa-graduation-cap text-[10px]"></i> 2 yrs 3
                                 mos</span>
-                            <p class="text-xs text-gray-400 italic">01/2019 - 04/2021</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">01/2019 - 04/2021</p>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed serif-font">
                             Higher Secondary Certificate in Science.
                         </p>
                     </div>
@@ -956,21 +958,21 @@
                     class="timeline-item relative flex flex-col md:flex-row-reverse gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:pl-8">
                         <span
-                            class="date-tag text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2019</span>
+                            class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-r shadow-sm rounded-l-none">2019</span>
                     </div>
                     <div
                         class="hidden md:flex absolute right-[140px] translate-x-1/2 top-1 items-center justify-center z-10">
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pr-10 flex-1 group-hover:pr-12 transition-all duration-300 text-right">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">SSC
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">SSC
                             (Science)</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">Bagdob High School</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">Bagdob High School</h3>
                         <div class="flex items-center justify-end gap-3 mb-3 mt-1">
                             <span class="duration-badge"><i class="fas fa-school text-[10px]"></i> 5 yrs</span>
-                            <p class="text-xs text-gray-400 italic">01/2014 - 01/2019</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">01/2014 - 01/2019</p>
                         </div>
-                        <p class="text-gray-300 text-sm leading-relaxed serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed serif-font">
                             Secondary School Certificate in Science.
                         </p>
                     </div>
@@ -986,7 +988,7 @@
         <div class="max-w-6xl mx-auto px-4 md:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold serif-font text-white mb-4">Online <span
+                <h2 class="text-4xl md:text-5xl font-bold serif-font text-gray-900 dark:text-white mb-4">Online <span
                         class="text-yellow-400">Courses</span></h2>
                 <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
             </div>
@@ -1002,10 +1004,10 @@
                         <i class="fa-solid fa-paintbrush"></i>
                     </div>
                     <!-- Course Title -->
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Web
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-400 transition-colors">Web
                         Designer</h3>
                     <!-- Institute/Source -->
-                    <p class="text-gray-400 text-sm">BanglaDevs, Dhaka</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">BanglaDevs, Dhaka</p>
                 </div>
 
                 <!-- Course 2: PSD to HTML -->
@@ -1014,9 +1016,9 @@
                         class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
                         <i class="fa-solid fa-layer-group"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">PSD to
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-400 transition-colors">PSD to
                         HTML</h3>
-                    <p class="text-gray-400 text-sm">BanglaDevs</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">BanglaDevs</p>
                 </div>
 
                 <!-- Course 3: SASS & Bootstrap -->
@@ -1025,9 +1027,9 @@
                         class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
                         <i class="fa-brands fa-sass"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">SASS &
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-400 transition-colors">SASS &
                         Bootstrap</h3>
-                    <p class="text-gray-400 text-sm">BanglaDevs</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">BanglaDevs</p>
                 </div>
 
                 <!-- Course 4: Web Development -->
@@ -1036,9 +1038,9 @@
                         class="course-icon-box w-16 h-16 rounded-full flex items-center justify-center text-yellow-400 text-2xl mb-4 group-hover:scale-110">
                         <i class="fa-solid fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Complete
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-400 transition-colors">Complete
                         Web Dev</h3>
-                    <p class="text-gray-400 text-sm">Programming-Hero</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Programming-Hero</p>
                 </div>
 
             </div>
@@ -1050,8 +1052,7 @@
     <section id="experience" class="py-20 bg-[#1e1e1e]">
         <div class="max-w-5xl mx-auto">
             <!-- Header -->
-            <h1 class="text-4xl md:text-5xl font-bold serif-font mb-12 text-white border-b border-gray-600 pb-4">
-                Experience</h1>
+            <h1 class="text-4xl md:text-5xl font-bold serif-font mb-12 text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 pb-4">Experience</h1>
 
             <!-- Timeline Container -->
             <div class="relative">
@@ -1062,7 +1063,7 @@
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <!-- Date -->
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
-                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                        <span class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
                             2024
                         </span>
                     </div>
@@ -1073,23 +1074,23 @@
                     </div>
                     <!-- Content -->
                     <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">
                             Associate Software Engineer</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">Softzino Technologies, Dhaka</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">Softzino Technologies, Dhaka</h3>
 
                         <!-- Duration Added Here -->
                         <div class="flex items-center gap-3 mb-3 mt-1">
-                            <p class="text-xs text-gray-400 italic">05/2024 - Present</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">05/2024 - Present</p>
                             <span class="duration-badge">
                                 <i class="fas fa-clock text-[10px]"></i> 1 yr 6 mos+
                             </span>
                         </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3 serif-font">
                             Softzino Technologies is a full-spectrum software development and IT solutions company that
                             delivers high-quality, scalable, and sustainable software products.
                         </p>
-                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             <li>Developed Android applications using Kotlin, Jetpack Compose, XML.</li>
                             <li>Consumed REST APIs using Retrofit with Moshi, OkHttp.</li>
                             <li>Integrated caching mechanisms using Room & local storage.</li>
@@ -1100,7 +1101,7 @@
                 <!-- Experience Item 2 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
-                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                        <span class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
                             2023
                         </span>
                     </div>
@@ -1109,23 +1110,23 @@
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">Web
                             Developer</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">Upwork.com (Freelance)</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">Upwork.com (Freelance)</h3>
 
                         <!-- Duration Added Here -->
                         <div class="flex items-center gap-3 mb-3 mt-1">
-                            <p class="text-xs text-gray-400 italic">01/2023 - 01/2025</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">01/2023 - 01/2025</p>
                             <span class="duration-badge">
                                 <i class="fas fa-history text-[10px]"></i> 2 yrs
                             </span>
                         </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3 serif-font">
                             UpWork – A global freelance marketplace connecting businesses with independent talent across
                             10,000+ skills.
                         </p>
-                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             <li>Built and delivered customized web solutions to clients worldwide.</li>
                             <li>Focused on responsive layouts, client communication, and SEO-friendly code.</li>
                         </ul>
@@ -1135,7 +1136,7 @@
                 <!-- Experience Item 3 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
-                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                        <span class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
                             2022
                         </span>
                     </div>
@@ -1144,22 +1145,22 @@
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">Web
                             Designer/Developer</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">WebDev Software Solutions</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">WebDev Software Solutions</h3>
 
                         <!-- Duration Added Here -->
                         <div class="flex items-center gap-3 mb-3 mt-1">
-                            <p class="text-xs text-gray-400 italic">11/2022 - 05/2025</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">11/2022 - 05/2025</p>
                             <span class="duration-badge">
                                 <i class="fas fa-history text-[10px]"></i> 2 yrs 6 mos
                             </span>
                         </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3 serif-font">
                             Delivering modern, scalable, and user-focused digital solutions for businesses worldwide.
                         </p>
-                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             <li>Developed responsive websites using HTML, CSS, JS, SCSS, and jQuery.</li>
                             <li>Implemented client projects using WordPress and WooCommerce.</li>
                         </ul>
@@ -1169,7 +1170,7 @@
                 <!-- Experience Item 4 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
-                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                        <span class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
                             2022
                         </span>
                     </div>
@@ -1178,19 +1179,19 @@
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">Web
                             Designer Intern</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">Bdevs</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">Bdevs</h3>
 
                         <!-- Duration Added Here -->
                         <div class="flex items-center gap-3 mb-3 mt-1">
-                            <p class="text-xs text-gray-400 italic">08/2022 - 10/2022</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">08/2022 - 10/2022</p>
                             <span class="duration-badge">
                                 <i class="fas fa-hourglass-half text-[10px]"></i> 3 mos
                             </span>
                         </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed mb-3 serif-font">
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3 serif-font">
                             Assisted in UI/UX development with SCSS and Bootstrap. Tested for cross-browser
                             compatibility.
                         </p>
@@ -1200,7 +1201,7 @@
                 <!-- Experience Item 5 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-0 mb-12 cursor-pointer group">
                     <div class="md:w-[120px] flex-shrink-0 flex justify-start md:justify-end items-start md:pr-8">
-                        <span class="date-tag text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
+                        <span class="date-tag text-gray-900 dark:text-white text-sm font-bold py-1 px-3 rounded-l shadow-sm">
                             2022
                         </span>
                     </div>
@@ -1209,19 +1210,19 @@
                         <div class="timeline-dot w-4 h-4 rounded-full border-2 border-[#2d2d2d]"></div>
                     </div>
                     <div class="md:pl-10 flex-1 group-hover:pl-12 transition-all duration-300">
-                        <h2 class="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors">Web
+                        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-400 transition-colors">Web
                             Design Trainee</h2>
-                        <h3 class="text-lg text-gray-300 mt-1">WebDev Software Solutions</h3>
+                        <h3 class="text-lg text-gray-700 dark:text-gray-300 mt-1">WebDev Software Solutions</h3>
 
                         <!-- Duration Added Here -->
                         <div class="flex items-center gap-3 mb-3 mt-1">
-                            <p class="text-xs text-gray-400 italic">04/2022 - 07/2022</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 italic">04/2022 - 07/2022</p>
                             <span class="duration-badge">
                                 <i class="fas fa-hourglass-end text-[10px]"></i> 4 mos
                             </span>
                         </div>
 
-                        <ul class="list-disc list-outside ml-4 text-sm text-gray-400 space-y-1">
+                        <ul class="list-disc list-outside ml-4 text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             <li>Practiced real-life projects with HTML, CSS, and JavaScript.</li>
                             <li>Built adaptive and mobile-friendly interfaces.</li>
                         </ul>
@@ -1240,24 +1241,24 @@
             <!-- Additional Sections Grid (Text Right Aligned) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-gray-600 text-right" dir="rtl">
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-4 serif-font">Hobbies & Interests</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 serif-font">Hobbies & Interests</h3>
                     <div class="flex flex-wrap gap-2">
                         <span
-                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Exploring
+                            class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Exploring
                             Full-stack</span>
                         <span
-                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Coding
+                            class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Coding
                             Challenges</span>
                         <span
-                            class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Competitive
+                            class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm border border-gray-600 hover:bg-yellow-500 hover:text-black transition cursor-pointer">Competitive
                             Programming</span>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-4 serif-font">Languages</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 serif-font">Languages</h3>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between group">
-                            <span class="text-gray-300">Bengali</span>
+                            <span class="text-gray-700 dark:text-gray-300">Bengali</span>
                             <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
                                 <div
                                     class="bg-yellow-400 h-full w-full transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out">
@@ -1265,7 +1266,7 @@
                             </div>
                         </div>
                         <div class="flex items-center justify-between group">
-                            <span class="text-gray-300">English</span>
+                            <span class="text-gray-700 dark:text-gray-300">English</span>
                             <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
                                 <div
                                     class="bg-yellow-400 h-full w-[85%] transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out delay-100">
@@ -1273,7 +1274,7 @@
                             </div>
                         </div>
                         <div class="flex items-center justify-between group">
-                            <span class="text-gray-300">Hindi</span>
+                            <span class="text-gray-700 dark:text-gray-300">Hindi</span>
                             <div class="w-1/2 bg-gray-700 h-2 rounded-full overflow-hidden rotate-180">
                                 <div
                                     class="bg-yellow-400 h-full w-[75%] transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out delay-200">
@@ -1299,102 +1300,1837 @@
                 <button class="portfolio-tab-btn" data-filter="web">Web</button>
                 <button class="portfolio-tab-btn" data-filter="android">Android</button>
                 <button class="portfolio-tab-btn" data-filter="react-native">React Native</button>
+                <button class="portfolio-tab-btn" data-filter="learning">Learning/Practice</button>
             </div>
 
             <!-- Portfolio Grid -->
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project: Gardomia (Web) -->
-                <div class="work-card" data-category="web">
-                    <img src="images/Gardomia.png" alt="Gardomia Project">
+                <!-- Project: Kotlin Practice -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Kotlin Practice Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">Gardomia</h3>
-                        <p>A responsive website for a gardening service.</p>
+                        <h3 class="text-xl font-bold">Kotlin Practice</h3>
+                        <p>A learning resource/practice project focusing on Kotlin Practice concepts.</p>
                         <div class="flex gap-4 mt-4">
-                            <a href="https://almuheetu.github.io/gardomia/" target="_blank" class="portfolio-link-btn"><i class="fa-solid fa-link"></i> Live Demo</a>
-                            <a href="https://github.com/almuheetushihab/gardomia" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/Kotlin-Practice" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project: Construction (Web) -->
-                <div class="work-card" data-category="web">
-                    <img src="images/Construction.png" alt="Construction Project">
+                <!-- Project: Mvvm Practice Project Kotlin -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Mvvm Practice Project Kotlin Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">Construction</h3>
-                        <p>A professional website for a construction company.</p>
+                        <h3 class="text-xl font-bold">Mvvm Practice Project Kotlin</h3>
+                        <p>A learning resource/practice project focusing on Mvvm Practice Project Kotlin concepts.</p>
                         <div class="flex gap-4 mt-4">
-                            <a href="https://almuheetu.github.io/Construction/" target="_blank" class="portfolio-link-btn"><i class="fa-solid fa-link"></i> Live Demo</a>
-                            <a href="https://github.com/almuheetushihab/Construction" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/MVVM-practice-project_Kotlin" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project: PioHost (Web) -->
+                <!-- Project: Updated Personal Portfolio -->
                 <div class="work-card" data-category="web">
-                    <img src="images/PioHost.png" alt="PioHost Project">
+                    <img src="images/bg.jpg" alt="Updated Personal Portfolio Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">PioHost</h3>
-                        <p>Landing page for a web hosting company.</p>
+                        <h3 class="text-xl font-bold">Updated Personal Portfolio</h3>
+                        <p>A web development project featuring Updated Personal Portfolio.</p>
                         <div class="flex gap-4 mt-4">
-                            <a href="https://almuheetu.github.io/piohost/" target="_blank" class="portfolio-link-btn"><i class="fa-solid fa-link"></i> Live Demo</a>
+                            <a href="http://github.com/almuheetushihab/Updated-Personal-Portfolio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Simple Note App Mvvm -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Simple Note App Mvvm Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Simple Note App Mvvm</h3>
+                        <p>An Android Native project built to showcase Simple Note App Mvvm development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/Simple-Note-App-MVVM" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Global Profile App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Global Profile App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Global Profile App</h3>
+                        <p>An Android Native project built to showcase Global Profile App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Global-Profile-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Smart Notes Pos Lite -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Smart Notes Pos Lite Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Smart Notes Pos Lite</h3>
+                        <p>An Android Native project built to showcase Smart Notes Pos Lite development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Smart-Notes-POS-Lite" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Posanalytics -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Posanalytics Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Posanalytics</h3>
+                        <p>An Android Native project built to showcase Posanalytics development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/PosAnalytics" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Multipaymentsystem -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Multipaymentsystem Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Multipaymentsystem</h3>
+                        <p>A web development project featuring Multipaymentsystem.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/MultiPaymentSystem" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Smart Pos Search -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Smart Pos Search Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Smart Pos Search</h3>
+                        <p>An Android Native project built to showcase Smart Pos Search development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Smart-Pos-Search" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Cash Register Security -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Cash Register Security Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Cash Register Security</h3>
+                        <p>A web development project featuring Cash Register Security.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Cash-Register-Security" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Smart Cart Discount Engine -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Smart Cart Discount Engine Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Smart Cart Discount Engine</h3>
+                        <p>A web development project featuring Smart Cart Discount Engine.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Smart-Cart-Discount-Engine" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Almuheetushihab -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Almuheetushihab Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Almuheetushihab</h3>
+                        <p>A web development project featuring Almuheetushihab.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/almuheetushihab" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Refund Exchange Simulator -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Refund Exchange Simulator Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Refund Exchange Simulator</h3>
+                        <p>A web development project featuring Refund Exchange Simulator.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Refund-Exchange-Simulator" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Expence App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Expence App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Expence App</h3>
+                        <p>An Android Native project built to showcase Expence App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Expence-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Mrbeast Free Gift Landing Page -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Mrbeast Free Gift Landing Page Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Mrbeast Free Gift Landing Page</h3>
+                        <p>A web development project featuring Mrbeast Free Gift Landing Page.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/MrBeast-Free-Gift-Landing-Page" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: My Resume App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="My Resume App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">My Resume App</h3>
+                        <p>An Android Native project built to showcase My Resume App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/My-Resume-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Hackerrank Problem Solving -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Hackerrank Problem Solving Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Hackerrank Problem Solving</h3>
+                        <p>A learning resource/practice project focusing on Hackerrank Problem Solving concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/hackerrank_Problem-Solving" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Posapp Reactnative -->
+                <div class="work-card" data-category="react-native">
+                    <img src="images/bg.jpg" alt="Posapp Reactnative Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Posapp Reactnative</h3>
+                        <p>A cross-platform React Native application demonstrating Posapp Reactnative.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/POSApp-ReactNative" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Myfirstproject Kmp -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Myfirstproject Kmp Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Myfirstproject Kmp</h3>
+                        <p>An Android Native project built to showcase Myfirstproject Kmp development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/MyFirstProject-KMP" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Moviqo Kotlin -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Moviqo Kotlin Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Moviqo Kotlin</h3>
+                        <p>An Android Native project built to showcase Moviqo Kotlin development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Moviqo-kotlin" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: My Personal Portfolio -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="My Personal Portfolio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">My Personal Portfolio</h3>
+                        <p>A web development project featuring My Personal Portfolio.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/My-Personal-Portfolio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Weatherlens -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Weatherlens Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Weatherlens</h3>
+                        <p>A web development project featuring Weatherlens.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/WeatherLens" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Almuheetu -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Almuheetu Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Almuheetu</h3>
+                        <p>A web development project featuring Almuheetu.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/almuheetu" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Personal Portfolio -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Personal Portfolio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Personal Portfolio</h3>
+                        <p>A web development project featuring Personal Portfolio.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Personal-Portfolio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Myskill For Personalportfolio Website -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Myskill For Personalportfolio Website Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Myskill For Personalportfolio Website</h3>
+                        <p>A web development project featuring Myskill For Personalportfolio Website.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/MySkill-For-PersonalPortfolio-Website" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Stackcarouselcompose -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Stackcarouselcompose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Stackcarouselcompose</h3>
+                        <p>An Android Native project built to showcase Stackcarouselcompose development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/StackCarouselCompose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Cardscratch -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Cardscratch Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Cardscratch</h3>
+                        <p>A web development project featuring Cardscratch.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/CardScratch" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Concept For React -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Js Concept For React Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Concept For React</h3>
+                        <p>A learning resource/practice project focusing on Js Concept For React concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-concept-for-React" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Smartpos Print Kotlin -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Smartpos Print Kotlin Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Smartpos Print Kotlin</h3>
+                        <p>An Android Native project built to showcase Smartpos Print Kotlin development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/SmartPOS-Print-kotlin" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: My First Project React Native -->
+                <div class="work-card" data-category="react-native">
+                    <img src="images/bg.jpg" alt="My First Project React Native Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">My First Project React Native</h3>
+                        <p>A cross-platform React Native application demonstrating My First Project React Native.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/My-first-project_react-native" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Javascript Practice For Reactnative -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Javascript Practice For Reactnative Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Javascript Practice For Reactnative</h3>
+                        <p>A learning resource/practice project focusing on Javascript Practice For Reactnative concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JavaScript-practice-for-ReactNative" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Todo Jetpackcompose -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Todo Jetpackcompose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Todo Jetpackcompose</h3>
+                        <p>An Android Native project built to showcase Todo Jetpackcompose development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/ToDo-jetpackcompose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Newportfolio -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Newportfolio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Newportfolio</h3>
+                        <p>A web development project featuring Newportfolio.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/NewPortfolio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Stripe Pay App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Stripe Pay App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Stripe Pay App</h3>
+                        <p>An Android Native project built to showcase Stripe Pay App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Stripe-Pay-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Pull To Refresh Android -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Pull To Refresh Android Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Pull To Refresh Android</h3>
+                        <p>An Android Native project built to showcase Pull To Refresh Android development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/pull-to-refresh_android" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Android Room Db Sample -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Android Room Db Sample Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Android Room Db Sample</h3>
+                        <p>An Android Native project built to showcase Android Room Db Sample development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/android-room-db-sample" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Copy To Clipboard With Jquery -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Copy To Clipboard With Jquery Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Copy To Clipboard With Jquery</h3>
+                        <p>A web development project featuring Copy To Clipboard With Jquery.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Copy-To-Clipboard-With-jQuery" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: To Do App Javascript -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="To Do App Javascript Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">To Do App Javascript</h3>
+                        <p>An Android Native project built to showcase To Do App Javascript development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/To-Do-App-javaScript" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Tabs -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Tabs Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Tabs</h3>
+                        <p>A web development project featuring Js Tabs.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-Tabs" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: My Personl Portfolio -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="My Personl Portfolio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">My Personl Portfolio</h3>
+                        <p>A web development project featuring My Personl Portfolio.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/My-Personl-Portfolio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Awesome Shop Jetpack Compose  -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Awesome Shop Jetpack Compose  Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Awesome Shop Jetpack Compose </h3>
+                        <p>An Android Native project built to showcase Awesome Shop Jetpack Compose  development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Awesome-shop_jetpack-compose-" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Newshop -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Newshop Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Newshop</h3>
+                        <p>A web development project featuring Newshop.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/NewShop" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Webview In Jetpackcompose -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Webview In Jetpackcompose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Webview In Jetpackcompose</h3>
+                        <p>An Android Native project built to showcase Webview In Jetpackcompose development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/WebView_in_JetpackCompose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Pos Dashboard -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Pos Dashboard Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Pos Dashboard</h3>
+                        <p>An Android Native project built to showcase Pos Dashboard development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Pos_Dashboard" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Shared Preferences Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Shared Preferences Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Shared Preferences Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Shared Preferences Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Shared-Preferences-Practice_Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Navigation Graph Practice -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Navigation Graph Practice Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Navigation Graph Practice</h3>
+                        <p>A learning resource/practice project focusing on Navigation Graph Practice concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Navigation-graph-Practice" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Example Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Example Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Example Project</h3>
+                        <p>A learning resource/practice project focusing on Example Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/example-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Smartstudy Using Jetpakcompose -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Smartstudy Using Jetpakcompose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Smartstudy Using Jetpakcompose</h3>
+                        <p>A learning resource/practice project focusing on Smartstudy Using Jetpakcompose concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/SmartStudy_using_JetpakCompose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Todo Task App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Todo Task App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Todo Task App</h3>
+                        <p>An Android Native project built to showcase Todo Task App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Todo_Task-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Studysmart App -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Studysmart App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Studysmart App</h3>
+                        <p>A learning resource/practice project focusing on Studysmart App concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/StudySmart_App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Awesome Shop -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Awesome Shop Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Awesome Shop</h3>
+                        <p>A web development project featuring Awesome Shop.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Awesome-Shop" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Navhost Jetpackcompose -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Navhost Jetpackcompose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Navhost Jetpackcompose</h3>
+                        <p>An Android Native project built to showcase Navhost Jetpackcompose development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/NavHost_jetpackCompose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Hilt Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Hilt Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Hilt Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Hilt Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Hilt_practice_Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Loginscreen Design -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Loginscreen Design Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Loginscreen Design</h3>
+                        <p>A web development project featuring Loginscreen Design.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/LoginScreen-Design" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Jetpack Compose -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Jetpack Compose Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Jetpack Compose</h3>
+                        <p>An Android Native project built to showcase Jetpack Compose development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Jetpack-Compose" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Practice Project About Declarative Ui -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Practice Project About Declarative Ui Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Practice Project About Declarative Ui</h3>
+                        <p>A learning resource/practice project focusing on Practice Project About Declarative Ui concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Practice-Project-about-Declarative-Ui" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Project -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Project</h3>
+                        <p>A web development project featuring Js Project.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Retrofit Project -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Retrofit Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Retrofit Project</h3>
+                        <p>An Android Native project built to showcase Retrofit Project development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Retrofit-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: About Hilt Practice -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="About Hilt Practice Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">About Hilt Practice</h3>
+                        <p>A learning resource/practice project focusing on About Hilt Practice concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/About-Hilt-Practice" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Employeeapp -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Employeeapp Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Employeeapp</h3>
+                        <p>An Android Native project built to showcase Employeeapp development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/EmployeeApp" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Retrofit Test Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Retrofit Test Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Retrofit Test Project</h3>
+                        <p>A learning resource/practice project focusing on Retrofit Test Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Retrofit-Test-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Testdivisionapp -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Testdivisionapp Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Testdivisionapp</h3>
+                        <p>A learning resource/practice project focusing on Testdivisionapp concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/TestDivisionApp" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Newproject Retrofit -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Newproject Retrofit Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Newproject Retrofit</h3>
+                        <p>An Android Native project built to showcase Newproject Retrofit development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/NewProject-Retrofit" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Division Search App Using Retrofil -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Division Search App Using Retrofil Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Division Search App Using Retrofil</h3>
+                        <p>An Android Native project built to showcase Division Search App Using Retrofil development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Division-Search_App-using-Retrofil" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Retrofit Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Retrofit Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Retrofit Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Retrofit Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Retrofit_practice_project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Carlist App Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Carlist App Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Carlist App Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Carlist App Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/CarList-app_Practice-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Todo Task -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Todo Task Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Todo Task</h3>
+                        <p>A web development project featuring Todo Task.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Todo-Task" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Passing Object Using Navigation -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Passing Object Using Navigation Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Passing Object Using Navigation</h3>
+                        <p>A web development project featuring Passing Object Using Navigation.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/Passing-Object-using-Navigation" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Shared Preference Project -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Shared Preference Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Shared Preference Project</h3>
+                        <p>A web development project featuring Shared Preference Project.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Shared-Preference-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Division Search App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Division Search App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Division Search App</h3>
+                        <p>An Android Native project built to showcase Division Search App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Division-Search_App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Viewmodel Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Viewmodel Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Viewmodel Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Viewmodel Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/viewModel-practice-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Division List App Project -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Division List App Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Division List App Project</h3>
+                        <p>An Android Native project built to showcase Division List App Project development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Division-List-App-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Employee Detail -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Employee Detail Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Employee Detail</h3>
+                        <p>A web development project featuring Employee Detail.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Employee-Detail" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Division List App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Division List App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Division List App</h3>
+                        <p>An Android Native project built to showcase Division List App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Division-List-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Employeedeteails App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Employeedeteails App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Employeedeteails App</h3>
+                        <p>An Android Native project built to showcase Employeedeteails App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/EmployeeDeteails-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Employeelist App Practice Project  -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Employeelist App Practice Project  Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Employeelist App Practice Project </h3>
+                        <p>A learning resource/practice project focusing on Employeelist App Practice Project  concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="http://github.com/almuheetushihab/EmployeeList-app_Practice-Project-" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: New Project Practicing Datasource -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="New Project Practicing Datasource Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">New Project Practicing Datasource</h3>
+                        <p>A web development project featuring New Project Practicing Datasource.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/New-Project-practicing-dataSource" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Navigation -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Navigation Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Navigation</h3>
+                        <p>A web development project featuring Navigation.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Navigation" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Test Application -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Test Application Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Test Application</h3>
+                        <p>A learning resource/practice project focusing on Test Application concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Test-Application" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Activity Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Activity Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Activity Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Activity Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Activity-Practice-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Activity Fragment Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Activity Fragment Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Activity Fragment Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Activity Fragment Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Activity-Fragment-practice-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Test Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Test Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Test Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Test Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Test-Practice-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Fragment Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Fragment Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Fragment Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Fragment Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Fragment-Practice-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Linear Search Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Linear Search Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Linear Search Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Linear Search Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Linear-Search_Practice_project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Databinidingexample -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Databinidingexample Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Databinidingexample</h3>
+                        <p>A learning resource/practice project focusing on Databinidingexample concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/DataBinidingExample" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Wavesoffood -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Wavesoffood Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Wavesoffood</h3>
+                        <p>A web development project featuring Wavesoffood.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/WavesOfFood" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Waves Of Food App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Waves Of Food App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Waves Of Food App</h3>
+                        <p>An Android Native project built to showcase Waves Of Food App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Waves-Of-Food-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Simplecalculator To Call Function Inside A Function -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Simplecalculator To Call Function Inside A Function Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Simplecalculator To Call Function Inside A Function</h3>
+                        <p>A web development project featuring Simplecalculator To Call Function Inside A Function.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/SimpleCalculator-To-Call-Function-Inside-A-Function" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Contact App -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Contact App Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Contact App</h3>
+                        <p>An Android Native project built to showcase Contact App development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Contact-app" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Fragment Lifecycle -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Fragment Lifecycle Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Fragment Lifecycle</h3>
+                        <p>An Android Native project built to showcase Fragment Lifecycle development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Fragment-lifecycle" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Organic Food Website -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Organic Food Website Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Organic Food Website</h3>
+                        <p>A web development project featuring Organic Food Website.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Organic_Food-website" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Practice Project By Android Studio -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Practice Project By Android Studio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Practice Project By Android Studio</h3>
+                        <p>A learning resource/practice project focusing on Practice Project By Android Studio concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Practice_project_by_Android_studio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Calculator App By Android Studio -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Calculator App By Android Studio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Calculator App By Android Studio</h3>
+                        <p>An Android Native project built to showcase Calculator App By Android Studio development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Calculator_App-by-android_studio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Currency Converter By Android Studio -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Currency Converter By Android Studio Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Currency Converter By Android Studio</h3>
+                        <p>An Android Native project built to showcase Currency Converter By Android Studio development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/currency-converter-by-android_studio" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Practice In Kotlin Functions -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Practice In Kotlin Functions Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Practice In Kotlin Functions</h3>
+                        <p>A learning resource/practice project focusing on Practice In Kotlin Functions concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Practice-in-Kotlin-functions" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Employemanejment Short Project Kotlin -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Employemanejment Short Project Kotlin Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Employemanejment Short Project Kotlin</h3>
+                        <p>An Android Native project built to showcase Employemanejment Short Project Kotlin development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/employeManejment-short-project_kotlin" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Practice Project Kotlin -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Practice Project Kotlin Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Practice Project Kotlin</h3>
+                        <p>A learning resource/practice project focusing on Practice Project Kotlin concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Practice-project_kotlin" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Calculator By Kotlin Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Calculator By Kotlin Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Calculator By Kotlin Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Calculator By Kotlin Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Calculator-by-kotlin-practice-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Kotlin Practice Projects -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Kotlin Practice Projects Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Kotlin Practice Projects</h3>
+                        <p>A learning resource/practice project focusing on Kotlin Practice Projects concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Kotlin_practice_projects" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Kotlin Documantion Note -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Kotlin Documantion Note Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Kotlin Documantion Note</h3>
+                        <p>A learning resource/practice project focusing on Kotlin Documantion Note concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Kotlin_documantion_note" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Knowledge Cafe -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Knowledge Cafe Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Knowledge Cafe</h3>
+                        <p>A web development project featuring Knowledge Cafe.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Knowledge-cafe" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: React World Tour Project -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="React World Tour Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">React World Tour Project</h3>
+                        <p>A web development project featuring React World Tour Project.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/React-World-Tour-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Programming Hero React -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Programming Hero React Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Programming Hero React</h3>
+                        <p>A web development project featuring Programming Hero React.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Programming-Hero-React" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Bus Tickets Landing Page -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Bus Tickets Landing Page Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Bus Tickets Landing Page</h3>
+                        <p>A web development project featuring Bus Tickets Landing Page.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Bus-tickets-landing-page" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Alpha Clash Pro Part2 -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Alpha Clash Pro Part2 Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Alpha Clash Pro Part2</h3>
+                        <p>A web development project featuring Alpha Clash Pro Part2.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/alpha-clash-pro_part2" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Geometry Genius -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Geometry Genius Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Geometry Genius</h3>
+                        <p>A web development project featuring Geometry Genius.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/geometry-genius" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Practice Project Javascript -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Practice Project Javascript Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Practice Project Javascript</h3>
+                        <p>A learning resource/practice project focusing on Practice Project Javascript concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Practice-project-javaScript" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: React -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="React Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">React</h3>
+                        <p>A web development project featuring React.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/React" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Complete Web Development Course -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Complete Web Development Course Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Complete Web Development Course</h3>
+                        <p>A web development project featuring Complete Web Development Course.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Complete-Web-Development-Course" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: React Practice -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="React Practice Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">React Practice</h3>
+                        <p>A learning resource/practice project focusing on React Practice concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/React_Practice" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Hockeys -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Hockeys Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Hockeys</h3>
+                        <p>A web development project featuring Hockeys.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Hockeys" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Cabhub -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Cabhub Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Cabhub</h3>
+                        <p>A web development project featuring Cabhub.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/CabHUB" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: B9a1 New Year -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="B9a1 New Year Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">B9a1 New Year</h3>
+                        <p>A web development project featuring B9a1 New Year.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/B9A1-New-Year" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Wp First Theme -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Wp First Theme Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Wp First Theme</h3>
+                        <p>A web development project featuring Wp First Theme.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Wp-first-theme" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Personal Portfolio Website -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Personal Portfolio Website Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Personal Portfolio Website</h3>
+                        <p>A web development project featuring Personal Portfolio Website.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Personal_portfolio_website" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Php Basic -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Php Basic Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Php Basic</h3>
+                        <p>A web development project featuring Php Basic.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/php-basic" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Javascript Job Interview Question -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Javascript Job Interview Question Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Javascript Job Interview Question</h3>
+                        <p>A web development project featuring Javascript Job Interview Question.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JavaScript-job-interview-question" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Ice Cream -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Ice Cream Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Ice Cream</h3>
+                        <p>A web development project featuring Ice Cream.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Ice-Cream" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Responsive Navigation Menu -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Responsive Navigation Menu Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Responsive Navigation Menu</h3>
+                        <p>A web development project featuring Responsive Navigation Menu.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Responsive-Navigation-Menu" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Increase Decrease Font Size Using Jquery -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Increase Decrease Font Size Using Jquery Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Increase Decrease Font Size Using Jquery</h3>
+                        <p>A web development project featuring Increase Decrease Font Size Using Jquery.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Increase-Decrease-Font-Size-Using-jQuery" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Food Website  -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Food Website  Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Food Website </h3>
+                        <p>A web development project featuring Food Website .</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Food-website-" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Client Test Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Client Test Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Client Test Project</h3>
+                        <p>A learning resource/practice project focusing on Client Test Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/client-test-project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Finderx  -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Finderx  Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Finderx </h3>
+                        <p>A web development project featuring Finderx .</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/FinderX-" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Todo List Jquery  -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Todo List Jquery  Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Todo List Jquery </h3>
+                        <p>A web development project featuring Todo List Jquery .</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Todo-List-jQuery-" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Jquery Test -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Jquery Test Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Jquery Test</h3>
+                        <p>A learning resource/practice project focusing on Jquery Test concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JQuery-Test" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Ecommerce Website -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Ecommerce Website Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Ecommerce Website</h3>
+                        <p>A web development project featuring Ecommerce Website.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Ecommerce-Website" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Register Form -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Register Form Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Register Form</h3>
+                        <p>A web development project featuring Register Form.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Register-form" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Login Form -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Login Form Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Login Form</h3>
+                        <p>A web development project featuring Login Form.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Login-form" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Modal -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Modal Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Modal</h3>
+                        <p>A web development project featuring Js Modal.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-modal" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Javascript Practice Project -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Javascript Practice Project Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Javascript Practice Project</h3>
+                        <p>A learning resource/practice project focusing on Javascript Practice Project concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JavaScript-Practice-Project" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Blooger -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Blooger Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Blooger</h3>
+                        <p>A web development project featuring Blooger.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Blooger" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: My Portfolio Website -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="My Portfolio Website Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">My Portfolio Website</h3>
+                        <p>A web development project featuring My Portfolio Website.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/My_Portfolio-Website" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Fundamental Es6 Part I Js -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Fundamental Es6 Part I Js Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Fundamental Es6 Part I Js</h3>
+                        <p>A learning resource/practice project focusing on Fundamental Es6 Part I Js concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Fundamental-ES6-Part-I-JS" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Qr Code Generator Js -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Qr Code Generator Js Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Qr Code Generator Js</h3>
+                        <p>A web development project featuring Qr Code Generator Js.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/QR-Code-Generator-JS" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project:  Digital Clock Using Js -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt=" Digital Clock Using Js Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold"> Digital Clock Using Js</h3>
+                        <p>A web development project featuring  Digital Clock Using Js.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/-Digital-Clock-Using-js" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Image Search App Js -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Image Search App Js Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Image Search App Js</h3>
+                        <p>An Android Native project built to showcase Image Search App Js development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Image-Search-App-JS" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Payapp -->
+                <div class="work-card" data-category="android">
+                    <img src="images/bg.jpg" alt="Payapp Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Payapp</h3>
+                        <p>An Android Native project built to showcase Payapp development.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Payapp" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Cuda -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Cuda Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Cuda</h3>
+                        <p>A web development project featuring Cuda.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Cuda" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Isotope -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Isotope Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Isotope</h3>
+                        <p>A web development project featuring Isotope.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Isotope" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Nylon -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Nylon Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Nylon</h3>
+                        <p>A web development project featuring Nylon.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Nylon" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Javascript Es6 Part 2 -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Javascript Es6 Part 2 Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Javascript Es6 Part 2</h3>
+                        <p>A web development project featuring Javascript Es6 Part 2.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JavaScript-ES6-part-2" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Es6 Javascript Basic Exercises   Part 1 -->
+                <div class="work-card" data-category="learning">
+                    <img src="images/bg.jpg" alt="Es6 Javascript Basic Exercises   Part 1 Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Es6 Javascript Basic Exercises   Part 1</h3>
+                        <p>A learning resource/practice project focusing on Es6 Javascript Basic Exercises   Part 1 concepts.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/ES6-JavaScript-basic-Exercises---part-1" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Kallyas -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Kallyas Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Kallyas</h3>
+                        <p>A web development project featuring Kallyas.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Kallyas" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Slider -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Slider Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Slider</h3>
+                        <p>A web development project featuring Slider.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Slider" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Grocery Bud -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Grocery Bud Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Grocery Bud</h3>
+                        <p>A web development project featuring Js Grocery Bud.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-grocery-bud" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Grocery Bud -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Grocery Bud Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Grocery Bud</h3>
+                        <p>A web development project featuring Grocery Bud.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/grocery-bud" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Lorem Ipsum -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Lorem Ipsum Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Lorem Ipsum</h3>
+                        <p>A web development project featuring Js Lorem Ipsum.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-lorem-ipsum" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Countdown Time -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Countdown Time Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Countdown Time</h3>
+                        <p>A web development project featuring Js Countdown Time.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-countdown-time" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Scroll -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Scroll Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Scroll</h3>
+                        <p>A web development project featuring Js Scroll.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-scroll" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Video -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Video Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Video</h3>
+                        <p>A web development project featuring Js Video.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-Video" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Menu -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Menu Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Menu</h3>
+                        <p>A web development project featuring Js Menu.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-menu" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Questions -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Questions Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Questions</h3>
+                        <p>A web development project featuring Js Questions.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-questions" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js Sidebar -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js Sidebar Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js Sidebar</h3>
+                        <p>A web development project featuring Js Sidebar.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS-sidebar" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Js   Navbar -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Js   Navbar Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Js   Navbar</h3>
+                        <p>A web development project featuring Js   Navbar.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/JS---navbar" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Reviews -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Reviews Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Reviews</h3>
+                        <p>A web development project featuring Reviews.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/reviews" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Counter -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Counter Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Counter</h3>
+                        <p>A web development project featuring Counter.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/counter" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Change Bacground -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Change Bacground Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Change Bacground</h3>
+                        <p>A web development project featuring Change Bacground.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/change-bacground" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Javascript Dom -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Javascript Dom Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Javascript Dom</h3>
+                        <p>A web development project featuring Javascript Dom.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/javaScript-DOM" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Bimax -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Bimax Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Bimax</h3>
+                        <p>A web development project featuring Bimax.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/Bimax" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Piohost -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Piohost Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Piohost</h3>
+                        <p>A web development project featuring Piohost.</p>
+                        <div class="flex gap-4 mt-4">
                             <a href="https://github.com/almuheetushihab/piohost" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project: Rentioo App (React Native) -->
-                <div class="work-card" data-category="react-native">
-                    <img src="images/back-1.png" alt="Rentioo App">
+                <!-- Project: Xisen -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Xisen Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">Rentioo App</h3>
-                        <p>A cross-platform mobile application for rentals.</p>
+                        <h3 class="text-xl font-bold">Xisen</h3>
+                        <p>A web development project featuring Xisen.</p>
                         <div class="flex gap-4 mt-4">
-                            <a class="portfolio-link-btn disabled"><i class="fa-solid fa-link"></i> No Demo</a>
-                            <a href="https://github.com/almuheetushihab/Rentio-App" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/xisen" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project: BariSeba (React Native) -->
-                <div class="work-card" data-category="react-native">
-                    <img src="images/back-2.png" alt="BariSeba App">
+                <!-- Project: Construction -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Construction Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">BariSeba</h3>
-                        <p>A cross-platform app for home services.</p>
+                        <h3 class="text-xl font-bold">Construction</h3>
+                        <p>A web development project featuring Construction.</p>
                         <div class="flex gap-4 mt-4">
-                            <a class="portfolio-link-btn disabled"><i class="fa-solid fa-link"></i> No Demo</a>
-                            <a href="https://github.com/almuheetushihab/BariSeba" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/Construction" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project: BarnoiPos (Android) -->
-                <div class="work-card" data-category="android">
-                    <img src="images/backkk.png" alt="BarnoiPos App">
+                <!-- Project: Gardomia -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Gardomia Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">BarnoiPos</h3>
-                        <p>An Android Native POS application using Kotlin.</p>
+                        <h3 class="text-xl font-bold">Gardomia</h3>
+                        <p>A web development project featuring Gardomia.</p>
                         <div class="flex gap-4 mt-4">
-                            <a class="portfolio-link-btn disabled"><i class="fa-solid fa-link"></i> No Demo</a>
-                            <a href="https://github.com/almuheetushihab/BarnoiPos" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/gardomia" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project: Softzee Ecommerce (Android) -->
-                <div class="work-card" data-category="android">
-                    <img src="images/profetionalpic.png" alt="Softzee Ecommerce App">
+                <!-- Project: Sinax -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Sinax Project">
                     <div class="work-link">
-                        <h3 class="text-xl font-bold">Softzee Ecommerce</h3>
-                        <p>An E-Commerce application using Kotlin and Retrofit.</p>
+                        <h3 class="text-xl font-bold">Sinax</h3>
+                        <p>A web development project featuring Sinax.</p>
                         <div class="flex gap-4 mt-4">
-                            <a class="portfolio-link-btn disabled"><i class="fa-solid fa-link"></i> No Demo</a>
-                            <a href="https://github.com/almuheetushihab/Softzee_Ecommerce" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://github.com/almuheetushihab/sinax" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-
+                <!-- Project: School.collage -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="School.collage Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">School.collage</h3>
+                        <p>A web development project featuring School.collage.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/School.Collage" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Fundu -->
+                <div class="work-card" data-category="web">
+                    <img src="images/bg.jpg" alt="Fundu Project">
+                    <div class="work-link">
+                        <h3 class="text-xl font-bold">Fundu</h3>
+                        <p>A web development project featuring Fundu.</p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/almuheetushihab/fundu" target="_blank" class="portfolio-link-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- See More Button -->
@@ -1457,7 +3193,11 @@
 
     <!-- ---------------- Add android section---------------- -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
     <script src="js/main.js"></script>
 </body>
 
 </html>
+
