@@ -1,4 +1,48 @@
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+            // ===================================
+            // 0. THEME TOGGLE (NEW)
+            // ===================================
+            const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            const sunIcon = 'fa-sun';
+            const moonIcon = 'fa-moon';
+
+            function updateThemeIcon(isLight) {
+                const newIcon = isLight ? sunIcon : moonIcon;
+                const oldIcon = isLight ? moonIcon : sunIcon;
+                
+                const desktopIcon = themeToggleDesktop ? themeToggleDesktop.querySelector('i') : null;
+                const mobileIcon = themeToggleMobile ? themeToggleMobile.querySelector('i') : null;
+
+                if (desktopIcon) {
+                    desktopIcon.classList.remove(oldIcon);
+                    desktopIcon.classList.add(newIcon);
+                }
+                if (mobileIcon) {
+                    mobileIcon.classList.remove(oldIcon);
+                    mobileIcon.classList.add(newIcon);
+                }
+            }
+
+            // Set initial icon on page load
+            updateThemeIcon(document.body.classList.contains('light-mode'));
+
+            const handleThemeToggle = () => {
+                document.body.classList.toggle('light-mode');
+                const isLight = document.body.classList.contains('light-mode');
+                
+                if (isLight) {
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    localStorage.removeItem('theme');
+                }
+                
+                updateThemeIcon(isLight);
+            };
+
+            if(themeToggleDesktop) themeToggleDesktop.addEventListener('click', handleThemeToggle);
+            if(themeToggleMobile) themeToggleMobile.addEventListener('click', handleThemeToggle);
             
             // ===================================
             // 1. TIMELINE & MENU ANIMATIONS (NEW)
@@ -167,4 +211,79 @@
 
             updateActiveNavLink();
             window.addEventListener('scroll', updateActiveNavLink);
+
+            // ===================================
+            // 4. PORTFOLIO TAB FILTERING (NEW)
+            // ===================================
+            const portfolioTabs = document.querySelectorAll('.portfolio-tab-btn');
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const portfolioItems = portfolioGrid ? Array.from(portfolioGrid.children) : [];
+
+            if(portfolioTabs.length > 0 && portfolioItems.length > 0) {
+                portfolioTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        portfolioTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const filter = this.getAttribute('data-filter');
+
+                        portfolioItems.forEach(item => {
+                            const category = item.getAttribute('data-category');
+                            
+                            if (filter === 'all' || filter === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // ===================================
+            // 3. CONTACT FORM SUBMISSION (NEW)
+            // ===================================
+            const contactForm = document.getElementById('contact-form');
+
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const form = e.target;
+                    const data = new FormData(form);
+                    const action = form.action;
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.innerHTML = 'Submitting...';
+                    submitButton.disabled = true;
+
+
+                    fetch(action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            alert('Thank you for your message!');
+                            form.reset(); 
+                        } else {
+                             response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    alert(data["errors"].map(error => error["message"]).join(", "));
+                                } else {
+                                    alert('Oops! There was a problem submitting your form.');
+                                }
+                            })
+                        }
+                    }).catch(error => {
+                        alert('Oops! There was a network error.');
+                    }).finally(() => {
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                    });
+                });
+            }
         });
