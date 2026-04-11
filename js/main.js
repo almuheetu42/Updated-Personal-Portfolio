@@ -1,4 +1,48 @@
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+            // ===================================
+            // 0. THEME TOGGLE (NEW)
+            // ===================================
+            const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            const sunIcon = 'fa-sun';
+            const moonIcon = 'fa-moon';
+
+            function updateThemeIcon(isLight) {
+                const newIcon = isLight ? sunIcon : moonIcon;
+                const oldIcon = isLight ? moonIcon : sunIcon;
+                
+                const desktopIcon = themeToggleDesktop ? themeToggleDesktop.querySelector('i') : null;
+                const mobileIcon = themeToggleMobile ? themeToggleMobile.querySelector('i') : null;
+
+                if (desktopIcon) {
+                    desktopIcon.classList.remove(oldIcon);
+                    desktopIcon.classList.add(newIcon);
+                }
+                if (mobileIcon) {
+                    mobileIcon.classList.remove(oldIcon);
+                    mobileIcon.classList.add(newIcon);
+                }
+            }
+
+            // Set initial icon on page load
+            updateThemeIcon(document.body.classList.contains('light-mode'));
+
+            const handleThemeToggle = () => {
+                document.body.classList.toggle('light-mode');
+                const isLight = document.body.classList.contains('light-mode');
+                
+                if (isLight) {
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    localStorage.removeItem('theme');
+                }
+                
+                updateThemeIcon(isLight);
+            };
+
+            if(themeToggleDesktop) themeToggleDesktop.addEventListener('click', handleThemeToggle);
+            if(themeToggleMobile) themeToggleMobile.addEventListener('click', handleThemeToggle);
             
             // ===================================
             // 1. TIMELINE & MENU ANIMATIONS (NEW)

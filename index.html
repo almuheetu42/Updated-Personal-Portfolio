@@ -15,6 +15,12 @@
 </head>
 
 <body>
+    <script>
+        // Anti-FOUC script
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+    </script>
     <!-- ------------------nav Started----------------- -->
     <nav class="fixed w-full top-0 z-50 bg-[#1f1f1f]/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 md:px-8">
@@ -25,7 +31,7 @@
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#header"
                         class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Home</a>
                     <a href="#about"
@@ -42,12 +48,20 @@
                         class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Portfolio</a>
                     <a href="#contact"
                         class="text-gray-300 hover:text-yellow-400 transition-colors text-sm font-medium uppercase tracking-wider">Contact</a>
+                    <button id="theme-toggle-desktop" class="text-gray-300 hover:text-yellow-400 text-xl">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <!-- Mobile Menu Button & Theme Toggle -->
+                <div class="md:hidden flex items-center gap-4">
+                     <button id="theme-toggle-mobile" class="text-gray-300 hover:text-yellow-400 text-xl">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -128,8 +142,6 @@
             </div>
         </div>
     </header>
-
-    <i class="fa-brands fa-hackerrank"></i>
     <!-- ================= HEADER End (NEW) ================= -->
 
     <!-- ================= ABOUT (NEW) ================= -->
@@ -1396,7 +1408,7 @@
     <!-- ------------------portfolio End----------------- -->
 
     <!-- ------------------Contact started----------------- -->
-    <section id="contact" class="py-20 bg-[#252525]">
+    <section id="contact" class="pt-20 bg-[#252525]">
         <div class="max-w-6xl mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row gap-12 justify-between">
 
