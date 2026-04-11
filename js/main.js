@@ -167,4 +167,79 @@
 
             updateActiveNavLink();
             window.addEventListener('scroll', updateActiveNavLink);
+
+            // ===================================
+            // 4. PORTFOLIO TAB FILTERING (NEW)
+            // ===================================
+            const portfolioTabs = document.querySelectorAll('.portfolio-tab-btn');
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const portfolioItems = portfolioGrid ? Array.from(portfolioGrid.children) : [];
+
+            if(portfolioTabs.length > 0 && portfolioItems.length > 0) {
+                portfolioTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        portfolioTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const filter = this.getAttribute('data-filter');
+
+                        portfolioItems.forEach(item => {
+                            const category = item.getAttribute('data-category');
+                            
+                            if (filter === 'all' || filter === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // ===================================
+            // 3. CONTACT FORM SUBMISSION (NEW)
+            // ===================================
+            const contactForm = document.getElementById('contact-form');
+
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const form = e.target;
+                    const data = new FormData(form);
+                    const action = form.action;
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.innerHTML = 'Submitting...';
+                    submitButton.disabled = true;
+
+
+                    fetch(action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            alert('Thank you for your message!');
+                            form.reset(); 
+                        } else {
+                             response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    alert(data["errors"].map(error => error["message"]).join(", "));
+                                } else {
+                                    alert('Oops! There was a problem submitting your form.');
+                                }
+                            })
+                        }
+                    }).catch(error => {
+                        alert('Oops! There was a network error.');
+                    }).finally(() => {
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                    });
+                });
+            }
         });
