@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
             // ===================================
             // 0. THEME TOGGLE (NEW)
@@ -25,21 +25,40 @@
                 }
             }
 
-            // Set initial icon on page load
-            updateThemeIcon(document.body.classList.contains('light-mode'));
+            // Set initial icon and sync state on page load
+            const initialIsLight = localStorage.getItem('theme') === 'light';
+            if (initialIsLight) {
+                document.documentElement.classList.add('light');
+                document.documentElement.classList.remove('dark');
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                document.body.classList.add('dark');
+                document.body.classList.remove('light-mode');
+            }
+            updateThemeIcon(initialIsLight);
 
             const handleThemeToggle = () => {
-                document.body.classList.toggle('light-mode');
-                document.body.classList.toggle('dark');
-                const isLight = document.body.classList.contains('light-mode');
-                
-                if (isLight) {
+                const isCurrentlyLight = document.documentElement.classList.contains('light') || document.body.classList.contains('light-mode');
+                const nextIsLight = !isCurrentlyLight;
+
+                if (nextIsLight) {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light-mode');
                     localStorage.setItem('theme', 'light');
                 } else {
-                    localStorage.removeItem('theme');
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.classList.add('dark');
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
                 }
-                
-                updateThemeIcon(isLight);
+
+                updateThemeIcon(nextIsLight);
             };
 
             if(themeToggleDesktop) themeToggleDesktop.addEventListener('click', handleThemeToggle);
