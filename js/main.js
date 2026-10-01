@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const moonIcon = 'fa-moon';
 
             function updateThemeIcon(isLight) {
-                const newIcon = isLight ? sunIcon : moonIcon;
-                const oldIcon = isLight ? moonIcon : sunIcon;
+                // When light mode is active, show moon icon (to switch to dark)
+                // When dark mode is active, show sun icon (to switch to light)
+                const newIcon = isLight ? moonIcon : sunIcon;
+                const oldIcon = isLight ? sunIcon : moonIcon;
+                const label = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
                 
                 const desktopIcon = themeToggleDesktop ? themeToggleDesktop.querySelector('i') : null;
                 const mobileIcon = themeToggleMobile ? themeToggleMobile.querySelector('i') : null;
@@ -22,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (mobileIcon) {
                     mobileIcon.classList.remove(oldIcon);
                     mobileIcon.classList.add(newIcon);
+                }
+
+                if (themeToggleDesktop) {
+                    themeToggleDesktop.setAttribute('aria-label', label);
+                    themeToggleDesktop.setAttribute('title', label);
+                }
+                if (themeToggleMobile) {
+                    themeToggleMobile.setAttribute('aria-label', label);
+                    themeToggleMobile.setAttribute('title', label);
                 }
             }
 

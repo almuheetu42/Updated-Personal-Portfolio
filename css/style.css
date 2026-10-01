@@ -39,34 +39,35 @@
 	--transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Fallback for light class to prevent white flash while maintaining readability */
+/* Light Mode Color Variables */
 html.light, body.light-mode {
-	--bg-primary: #0b1120;
-	--bg-secondary: #111827;
-	--bg-tertiary: #1f2937;
-	--bg-nav: rgba(11, 17, 32, 0.92);
-	--bg-card: rgba(17, 24, 39, 0.85);
-	--bg-form-input: #1f2937;
+	--bg-primary: #f8fafc;
+	--bg-secondary: #ffffff;
+	--bg-tertiary: #f1f5f9;
+	--bg-nav: rgba(255, 255, 255, 0.88);
+	--bg-card: rgba(255, 255, 255, 0.95);
+	--bg-form-input: #ffffff;
 
-	--text-headings: #f9fafb;
-	--text-primary: #d1d5db;
-	--text-secondary: #9ca3af;
-	--text-tertiary: #6b7280;
-	--text-contrast: #0b1120;
+	--text-headings: #0f172a;
+	--text-primary: #334155;
+	--text-secondary: #64748b;
+	--text-tertiary: #94a3b8;
+	--text-contrast: #ffffff;
 
-	--border-primary: rgba(251, 191, 36, 0.2);
-	--border-secondary: rgba(255, 255, 255, 0.08);
-	--border-gold-thin: rgba(251, 191, 36, 0.35);
+	--border-primary: rgba(245, 158, 11, 0.35);
+	--border-secondary: rgba(226, 232, 240, 0.9);
+	--border-gold-thin: rgba(217, 119, 6, 0.35);
 
-	--accent-primary: #fbbf24;
-	--accent-primary-dark: #f59e0b;
-	--accent-secondary: #38bdf8;
-	--accent-shadow: rgba(251, 191, 36, 0.25);
-	--card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+	--accent-primary: #d97706;
+	--accent-primary-dark: #b45309;
+	--accent-secondary: #0284c7;
+	--accent-shadow: rgba(217, 119, 6, 0.2);
+	--card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.07);
 }
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
 }
 
 body {
@@ -250,18 +251,18 @@ body.light-mode #theme-toggle-desktop i, body.light-mode #theme-toggle-mobile i 
 
 
 /* ========== UNIVERSAL SECTION STYLES ========== */
-#about, #courses, #portfolio, #contact {
+#about, #courses, #portfolio, #testimonials, #contact {
 	background-color: var(--bg-secondary) !important;
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#header, #skills, #skills > div, #experience, #additional, #education {
+#header, #skills, #education, #experience, #achievements, #blog, #additional {
 	background-color: var(--bg-primary) !important;
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#about h2, #skills h1, #education h1, #courses h2, #experience h1, #portfolio h1, #contact h1 {
+#about h2, #skills h1, #education h1, #courses h2, #experience h1, #portfolio h1, #contact h1, #achievements h2, #testimonials h2, #blog h2 {
 	color: var(--text-headings);
 }
-#about .text-gray-300, #skills p, #education p, #experience p, #additional span, #additional .text-gray-300 {
+#about .text-gray-300, #skills p, #education p, #experience p, #additional span, #additional .text-gray-300, #achievements p, #testimonials p, #blog p {
 	color: var(--text-secondary);
 }
 
@@ -422,6 +423,18 @@ body.light-mode .wavy-line { background-image: url("data:image/svg+xml,%3Csvg xm
     background-color: var(--accent-primary);
     color: var(--text-contrast);
     border-color: var(--accent-primary);
+}
+.portfolio-link-btn.demo {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    border-color: #f59e0b;
+    font-weight: 600;
+}
+.portfolio-link-btn.demo:hover {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
 }
 .portfolio-link-btn.github:hover {
     background-color: #333;
@@ -605,3 +618,142 @@ form textarea {
     font-weight: 300;
 }
 .copyright i { color: var(--accent-secondary); }
+
+/* ========== LIGHT MODE SPECIFIC UI ADAPTATIONS ========== */
+html.light, body.light-mode {
+    color-scheme: light;
+}
+html.light body, body.light-mode {
+    background-color: #f8fafc;
+    color: #334155;
+}
+html.light nav, body.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+}
+html.light #mobile-menu, body.light-mode #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-top-color: rgba(226, 232, 240, 0.9) !important;
+}
+html.light .glass-card, body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(203, 213, 225, 0.8) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06) !important;
+}
+html.light .skill-card, body.light-mode .skill-card {
+    background: #ffffff !important;
+    border-color: rgba(226, 232, 240, 1) !important;
+    color: #1e293b !important;
+}
+html.light .skill-card:hover, body.light-mode .skill-card:hover {
+    background: #f8fafc !important;
+    border-color: #f59e0b !important;
+    color: #0f172a !important;
+}
+html.light #highlighted, body.light-mode #highlighted {
+    background-color: #ffffff !important;
+    border-color: rgba(245, 158, 11, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+html.light #highlighted-title, body.light-mode #highlighted-title {
+    color: #0f172a !important;
+}
+html.light #highlighted-desc, body.light-mode #highlighted-desc {
+    color: #475569 !important;
+}
+html.light .circuit-line, body.light-mode .circuit-line {
+    background-color: #cbd5e1 !important;
+    box-shadow: 0 0 6px rgba(14, 165, 233, 0.25) !important;
+}
+html.light .work-card, body.light-mode .work-card {
+    background-color: #ffffff !important;
+    border-color: rgba(226, 232, 240, 1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+html.light .work-card .work-link, body.light-mode .work-card .work-link {
+    background-color: #ffffff !important;
+}
+html.light .work-card .work-link h3, body.light-mode .work-card .work-link h3 {
+    color: #0f172a !important;
+}
+html.light .work-card .work-link p, body.light-mode .work-card .work-link p {
+    color: #475569 !important;
+}
+html.light .portfolio-link-btn, body.light-mode .portfolio-link-btn {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #cbd5e1 !important;
+}
+html.light .portfolio-link-btn:hover, body.light-mode .portfolio-link-btn:hover {
+    background-color: #f59e0b !important;
+    color: #ffffff !important;
+    border-color: #f59e0b !important;
+}
+html.light .portfolio-link-btn.demo, body.light-mode .portfolio-link-btn.demo {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #ffffff !important;
+    border-color: #f59e0b !important;
+}
+html.light .portfolio-link-btn.demo:hover, body.light-mode .portfolio-link-btn.demo:hover {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+    color: #0f172a !important;
+}
+html.light .portfolio-link-btn.github:hover, body.light-mode .portfolio-link-btn.github:hover {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #1e293b !important;
+}
+html.light .portfolio-tab-btn, body.light-mode .portfolio-tab-btn {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    border-color: #e2e8f0 !important;
+}
+html.light .portfolio-tab-btn.active, body.light-mode .portfolio-tab-btn.active {
+    background-color: #f59e0b !important;
+    color: #ffffff !important;
+    border-color: #f59e0b !important;
+}
+html.light .course-card, body.light-mode .course-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+html.light .course-icon-box, body.light-mode .course-icon-box {
+    background: #f1f5f9 !important;
+}
+html.light form input, html.light form textarea, body.light-mode form input, body.light-mode form textarea {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+html.light .copyright, body.light-mode .copyright {
+    background-color: #ffffff !important;
+    border-top-color: #e2e8f0 !important;
+    color: #64748b !important;
+}
+
+/* Experience Section Light Mode Overrides */
+html.light #experience, body.light-mode #experience {
+    background-color: #f8fafc !important;
+    color: #334155 !important;
+}
+html.light #experience h2, body.light-mode #experience h2,
+html.light #experience h3, body.light-mode #experience h3 {
+    color: #0f172a !important;
+}
+html.light #experience p, body.light-mode #experience p,
+html.light #experience li, body.light-mode #experience li {
+    color: #475569 !important;
+}
+html.light #experience .timeline-item > div:last-child,
+body.light-mode #experience .timeline-item > div:last-child {
+    background-color: #ffffff !important;
+    border-color: rgba(226, 232, 240, 1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+html.light #experience .grid > div,
+body.light-mode #experience .grid > div {
+    background-color: #ffffff !important;
+    border-color: rgba(226, 232, 240, 1) !important;
+}
+
