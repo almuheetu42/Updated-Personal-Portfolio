@@ -70,6 +70,11 @@ html {
 	scroll-padding-top: 5rem;
 }
 
+/* Ensure sections have top scroll margin for sticky header */
+section[id], header[id] {
+	scroll-margin-top: 5rem;
+}
+
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: var(--bg-primary);
@@ -134,12 +139,41 @@ nav a:hover, #theme-toggle-desktop:hover, #theme-toggle-mobile:hover {
 nav .text-white { color: var(--text-headings); }
 nav .text-yellow-400 { color: var(--accent-primary); }
 
+/* ========== SCROLLSPY ACTIVE NAV LINK ========== */
+.nav-link.active {
+	color: var(--accent-primary) !important;
+	font-weight: 700;
+	position: relative;
+}
+
+/* Subtle accent indicator line under active desktop link */
+@media (min-width: 1024px) {
+	.nav-link.active::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: var(--accent-primary);
+		border-radius: 9999px;
+		box-shadow: 0 0 8px var(--accent-shadow);
+	}
+}
+
 #mobile-menu {
 	background-color: var(--bg-tertiary);
 	border-top-color: var(--border-primary);
 }
 #mobile-menu a { color: var(--text-secondary); }
 #mobile-menu a:hover { background-color: var(--bg-primary); color: var(--text-primary); }
+
+#mobile-menu .nav-link.active {
+	color: var(--accent-primary) !important;
+	background-color: rgba(217, 119, 6, 0.12);
+	border-left: 3px solid var(--accent-primary);
+	font-weight: 700;
+}
 
 #theme-toggle-desktop i, #theme-toggle-mobile i {
     transition: transform 0.3s ease;

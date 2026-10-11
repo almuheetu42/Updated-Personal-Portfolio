@@ -110,6 +110,85 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // ===================================
+            // SCROLLSPY (INTERSECTION OBSERVER)
+            // ===================================
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Map each unique in-page section matching a nav link href
+            const sectionMap = new Map();
+            navLinks.forEach(link => {
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                    const section = document.querySelector(targetId);
+                    if (section && !sectionMap.has(targetId)) {
+                        sectionMap.set(targetId, section);
+                    }
+                }
+            });
+
+            const spySections = Array.from(sectionMap.values());
+
+            function setActiveLink(sectionId) {
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            if (spySections.length > 0) {
+                // IntersectionObserver for high-performance section tracking
+                // -80px top offset accounts for sticky navbar
+                // -60% bottom offset triggers when the section enters the reading zone
+                const scrollSpyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveLink(entry.target.id);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '-80px 0px -60% 0px',
+                    threshold: 0
+                });
+
+                spySections.forEach(sec => scrollSpyObserver.observe(sec));
+
+                // Bottom of page detection (activates the final section when page cannot scroll further)
+                window.addEventListener('scroll', () => {
+                    const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 10);
+                    if (atBottom) {
+                        const lastSection = spySections[spySections.length - 1];
+                        if (lastSection) {
+                            setActiveLink(lastSection.id);
+                        }
+                    }
+                }, { passive: true });
+
+                // Smooth scrolling click handler with instant active update
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const targetId = link.getAttribute('href');
+                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                            const targetSection = document.querySelector(targetId);
+                            if (targetSection) {
+                                e.preventDefault();
+                                targetSection.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                                setActiveLink(targetId.substring(1));
+                                history.pushState(null, '', targetId);
+                            }
+                        }
+                    });
+                });
+            }
+
+            // ===================================
             // 2. REST OF THE SCRIPTS (PRESERVED)
             // (Accordion, Skill Cards, Tabs)
             // ===================================
@@ -252,40 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.filterSkills(category, tabBtn);
                 });
             });
-
-            // Nav active section highlight
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            const sections = [...navLinks]
-                .map(link => document.querySelector(link.getAttribute('href')))
-                .filter(Boolean);
-
-            function updateActiveNavLink() {
-                let currentSectionId = sections[0]?.id || '';
-
-                sections.forEach(section => {
-                    const top = section.offsetTop - 120;
-                    const bottom = top + section.offsetHeight;
-                    if (window.scrollY >= top && window.scrollY < bottom) {
-                        currentSectionId = section.id;
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    const isActive = link.getAttribute('href') === `#${currentSectionId}`;
-                    link.classList.toggle('active', isActive);
-
-                    if (link.closest('#mobile-menu')) {
-                        link.classList.toggle('bg-gray-700', isActive);
-                        link.classList.toggle('text-white', isActive);
-                        link.classList.toggle('text-yellow-400', isActive);
-                    } else {
-                        link.classList.toggle('text-yellow-400', isActive);
-                    }
-                });
-            }
-
-            updateActiveNavLink();
-            window.addEventListener('scroll', updateActiveNavLink);
 
             // ===================================
             // 4. PORTFOLIO TAB FILTERING & SHOW MORE
