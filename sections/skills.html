@@ -1,0 +1,706 @@
+<!-- ================= MySkill SECTION ================= -->
+    <style>
+        @keyframes electricPulseVertical {
+            0% { transform: translateY(-100%); opacity: 0; }
+            30%, 70% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        @keyframes electricPulseHorizontal {
+            0% { transform: translateX(-100%); opacity: 0; }
+            30%, 70% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+        @keyframes neonPulse {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(56, 189, 248, 0.35), inset 0 0 15px rgba(56, 189, 248, 0.15); 
+                border-color: rgba(56, 189, 248, 0.45);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(56, 189, 248, 0.7), inset 0 0 25px rgba(56, 189, 248, 0.3); 
+                border-color: rgba(56, 189, 248, 0.85);
+            }
+        }
+
+        .root-card-glow {
+            animation: neonPulse 4s ease-in-out infinite;
+        }
+
+        .circuit-line {
+            background-color: #1e3358;
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .circuit-line-v::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, #38bdf8, transparent);
+            animation: electricPulseVertical 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .circuit-line-h::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent, #38bdf8, transparent);
+            animation: electricPulseHorizontal 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(14, 23, 42, 0.8) 0%, rgba(10, 16, 30, 0.9) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.15);
+        }
+
+        .skill-card.active, .skill-card.ring-2 {
+            border-color: #38bdf8 !important;
+            background: rgba(14, 165, 233, 0.25) !important;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+            color: #ffffff !important;
+        }
+    </style>
+
+    <section id="skills" class="py-16 px-4 bg-[#080d1a] text-slate-100 relative overflow-x-clip font-sans">
+        <div class="max-w-6xl mx-auto relative z-10">
+            
+            <!-- Header & CV Download -->
+            <header class="text-center mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse"></span>
+                    Skill Architecture & Tech Tree
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight drop-shadow-sm dark:drop-shadow-md">
+                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600 dark:from-yellow-400 dark:via-amber-300 dark:to-yellow-500">Skills</span>
+                </h1>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+                    Tools, frameworks & architectures I use regularly — click any card to highlight it
+                </p>
+                <div class="mt-4">
+                    <a href="images/CV/MD. AL-MUHEETU_CV.pdf"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:brightness-105 transition-all shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:scale-105"
+                        download>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Download CV
+                    </a>
+                </div>
+            </header>
+
+            <!-- Sticky Highlighted Skill Display Panel (Docks below navbar on scroll) -->
+            <div class="sticky top-16 md:top-[70px] z-30 mb-8 py-2">
+                <div id="highlighted"
+                    class="relative rounded-2xl p-3 sm:p-5 md:p-6 bg-white/95 dark:bg-[#0c1426]/95 backdrop-blur-xl border border-slate-200/90 dark:border-cyan-500/40 flex items-center justify-between gap-3 sm:gap-5 md:gap-6 shadow-lg dark:shadow-[0_12px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
+                    <div class="flex items-center gap-3 sm:gap-5 flex-1 min-w-0">
+                        <div id="highlighted-icon"
+                            class="w-10 h-10 sm:w-16 sm:h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl sm:text-3xl flex-shrink-0 text-cyan-600 dark:text-cyan-400 shadow-[0_0_15px_rgba(56,189,248,0.25)]">
+                            <i class="fa-solid fa-layer-group text-amber-500 dark:text-amber-400"></i>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-0.5">
+                                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] uppercase font-bold font-mono tracking-wider bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse"></span> Active Skill
+                                </span>
+                                <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">• Live Architecture Preview</span>
+                            </div>
+                            <div id="highlighted-title" class="text-base sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white tracking-wide truncate">
+                                Jetpack Compose
+                            </div>
+                            <div id="highlighted-desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5 max-w-3xl leading-relaxed line-clamp-1 sm:line-clamp-2 md:line-clamp-none">
+                                Modern Android UI toolkit
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Guide Hint -->
+                    <div class="hidden lg:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-slate-300 shrink-0">
+                        <i class="fa-solid fa-arrow-pointer text-amber-500 dark:text-amber-400 text-xs animate-bounce"></i>
+                        <span>Click any skill card to preview</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Architecture Helper Hint -->
+            <div class="md:hidden flex items-center justify-center gap-2 py-1.5 px-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 dark:text-cyan-300 text-xs mb-4 mx-auto max-w-xs text-center">
+                <i class="fa-solid fa-arrows-up-down text-xs animate-pulse"></i>
+                <span>Mobile Optimized Tree • Tap any skill</span>
+            </div>
+
+            <!-- ================= FLOWCHART TREE WRAPPER ================= -->
+            <div class="relative w-full overflow-x-auto md:overflow-x-visible pb-6 px-1 scrollbar-thin">
+                
+                <!-- Central Root Node: MY SKILLS -->
+                <div class="flex flex-col items-center">
+                    <div class="relative group cursor-pointer">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-400 rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition duration-500"></div>
+                        
+                        <div class="relative px-12 py-4 rounded-xl bg-white/95 dark:bg-[#0c1426]/95 backdrop-blur-md border border-slate-200/90 dark:border-cyan-500/50 root-card-glow cursor-default shadow-md dark:shadow-none">
+                            <h2 class="text-xl md:text-2xl font-black tracking-[0.25em] text-slate-900 dark:text-white uppercase text-center flex items-center gap-3.5">
+                                <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-500 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse"></span>
+                                MY SKILLS
+                                <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-500 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse"></span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stem Line from MY SKILLS -->
+                <div class="circuit-line circuit-line-v w-[2px] h-10 mx-auto"></div>
+
+                <!-- Desktop Branch Bar (Tier 1) -->
+                <div class="hidden md:block relative w-1/2 mx-auto">
+                    <div class="circuit-line circuit-line-h h-[2px] w-full"></div>
+                    <div class="absolute -left-1.5 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+                    <div class="absolute left-1/2 -translate-x-1/2 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+                    <div class="absolute -right-1.5 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+
+                    <div class="circuit-line circuit-line-v absolute left-0 top-0 w-[2px] h-10"></div>
+                    <div class="circuit-line circuit-line-v absolute right-0 top-0 w-[2px] h-10"></div>
+                    <div class="circuit-line circuit-line-v absolute left-1/2 -translate-x-1/2 top-0 w-[2px] h-10"></div>
+                </div>
+
+                <!-- ================= TIER 1: FRONTEND & MOBILE ARCHITECTURE ================= -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 relative md:mt-10 items-stretch">
+                    
+                    <!-- Desktop Center Divider Trunk Line -->
+                    <div class="hidden md:block circuit-line circuit-line-v absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] pointer-events-none"></div>
+
+                    <!-- FRONTEND ARCHITECTURE -->
+                    <div class="relative group">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8] z-20"></div>
+                        <div class="glass-card rounded-2xl p-6 h-full flex flex-col items-center">
+                            <div class="flex items-center justify-between w-full mb-5 pb-3 border-b border-cyan-500/20">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-sm">
+                                        <i class="fa-solid fa-laptop-code"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">Frontend Architecture</h3>
+                                        <p class="text-[11px] text-slate-400">Web UI, Responsive Layouts & Reactive Frameworks</p>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">12 Skills</span>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2.5 w-full">
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="HTML5" data-desc="Semantic HTML & modern markup"
+                            data-icon='<i class="fa-brands fa-html5 text-[#E34F26] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-html5 text-[#E34F26] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">HTML5</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="CSS3" data-desc="Modern CSS, Flexbox & Grid"
+                            data-icon='<i class="fa-brands fa-css3-alt text-[#1572B6] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-css3-alt text-[#1572B6] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">CSS3</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="SASS / SCSS" data-desc="Preprocessor & modular styles"
+                            data-icon='<i class="fa-brands fa-sass text-[#CC6699] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-sass text-[#CC6699] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">SASS / SCSS</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="Bootstrap" data-desc="Responsive components & utilities"
+                            data-icon='<i class="fa-brands fa-bootstrap text-[#7952B3] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-bootstrap text-[#7952B3] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Bootstrap</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="Tailwind CSS" data-desc="Utility-first CSS framework"
+                            data-icon='<i class="fa-solid fa-wind text-2xl text-[#38bdf8]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-wind text-sm text-[#38bdf8]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Tailwind CSS</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="JavaScript" data-desc="ES6+, DOM, async/await"
+                            data-icon='<i class="fa-brands fa-js text-[#F7DF1E] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-js text-[#F7DF1E] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">JavaScript</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="jQuery" data-desc="DOM helpers & legacy projects"
+                            data-icon='<i class="fa-solid fa-code text-2xl text-[#0769ad]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-code text-sm text-[#0769ad]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">jQuery</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="React" data-desc="Component-based UI"
+                            data-icon='<i class="fa-brands fa-react text-[#61DAFB] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-react text-[#61DAFB] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">React</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="React Native" data-desc="Mobile apps with React"
+                            data-icon='<i class="fa-solid fa-mobile-screen text-2xl text-[#61dbfb]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-mobile-screen text-sm text-[#61dbfb]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">React Native</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="frontend" data-title="SEO" data-desc="Search Engine Optimization and site performance improvements."
+                            data-icon='<i class="fa-solid fa-magnifying-glass-chart text-2xl text-[#4ade80]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-magnifying-glass-chart text-sm text-[#4ade80]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">SEO</span>
+                        </button>
+                                <!-- TypeScript -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="frontend" data-title="TypeScript" data-desc="Strict typing & scalable application development"
+                                    data-icon='<i class="fa-brands fa-js text-2xl text-[#3178c6]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-brands fa-js text-sm text-[#3178c6]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">TypeScript</span>
+                                </button>
+                                <!-- Daisy UI -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="frontend" data-title="Daisy UI" data-desc="Tailwind CSS component library for modern web interfaces"
+                                    data-icon='<i class="fa-solid fa-wand-magic-sparkles text-2xl text-[#1ad1a5]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-sm text-[#1ad1a5]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Daisy UI</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MOBILE & ANDROID ENGINEERING -->
+                    <div class="relative group mt-8 md:mt-0">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8] z-20"></div>
+                        <div class="glass-card rounded-2xl p-6 h-full flex flex-col items-center">
+                            <div class="flex items-center justify-between w-full mb-5 pb-3 border-b border-cyan-500/20">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-sm">
+                                        <i class="fa-brands fa-android"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-300 uppercase">Mobile & Android Architecture</h3>
+                                        <p class="text-[11px] text-slate-400">Kotlin, Jetpack Compose & Clean Architecture</p>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono">12 Skills</span>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2.5 w-full">
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="Kotlin" data-desc="Kotlin for Android & backend"
+                            data-icon='<i class="fa-brands fa-android text-2xl text-[#7f52ff]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-android text-sm text-[#7f52ff]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Kotlin</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="Kotlin Coroutines" data-desc="Asynchronous programming"
+                            data-icon='<i class="fa-solid fa-bolt text-2xl text-[#fcd34d]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bolt text-sm text-[#fcd34d]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Kotlin Coroutines</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="Jetpack Compose" data-desc="Modern Android UI toolkit"
+                            data-icon='<i class="fa-solid fa-layer-group text-2xl text-[#4285f4]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-layer-group text-sm text-[#4285f4]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Jetpack Compose</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="Clean Architecture" data-desc="MVVM, Repository Pattern, ViewModel, and separation of concerns."
+                            data-icon='<i class="fa-solid fa-sitemap text-2xl text-[#a3e635]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-sitemap text-sm text-[#a3e635]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Clean Architecture</span>
+                        </button>
+                                <!-- Room Database & SQLite -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="mobile" data-title="Room & SQLite" data-desc="Offline-first local database caching & persistence"
+                                    data-icon='<i class="fa-solid fa-database text-2xl text-[#f59e0b]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-database text-sm text-[#f59e0b]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Room & SQLite</span>
+                                </button>
+                                <!-- Dagger / Hilt -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="mobile" data-title="Dagger / Hilt" data-desc="Dependency injection for scalable Android architecture"
+                                    data-icon='<i class="fa-solid fa-syringe text-2xl text-[#a855f7]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-syringe text-sm text-[#a855f7]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Dagger / Hilt</span>
+                                </button>
+                                <!-- NativeWind -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="mobile" data-title="NativeWind" data-desc="Tailwind CSS for React Native styling"
+                                    data-icon='<i class="fa-solid fa-wind text-2xl text-[#38bdf8]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-wind text-sm text-[#38bdf8]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">NativeWind</span>
+                                </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="ViewModel" data-desc="State holder for UI"
+                            data-icon='<i class="fa-solid fa-database text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-database text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">ViewModel</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="LiveData" data-desc="Observable lifecycle-aware data"
+                            data-icon='<i class="fa-solid fa-signal text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-signal text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">LiveData</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="DataStore" data-desc="Local key-value & proto storage"
+                            data-icon='<i class="fa-solid fa-floppy-disk text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-floppy-disk text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">DataStore</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="State Management" data-desc="Managing UI state with LiveData and observable patterns."
+                            data-icon='<i class="fa-solid fa-arrows-rotate text-2xl text-[#22d3ee]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-arrows-rotate text-sm text-[#22d3ee]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">State Management</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="mobile" data-title="Clean Architecture" data-desc="Layered & testable architecture"
+                            data-icon='<i class="fa-solid fa-project-diagram text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-project-diagram text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Clean Architecture</span>
+                        </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trunk Connector down to Tier 2 -->
+                <div class="circuit-line circuit-line-v w-[2px] h-12 mx-auto"></div>
+
+                <!-- Desktop Branch Bar (Tier 2) -->
+                <div class="hidden md:block relative w-1/2 mx-auto">
+                    <div class="circuit-line circuit-line-h h-[2px] w-full"></div>
+                    <div class="absolute -left-1.5 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+                    <div class="absolute left-1/2 -translate-x-1/2 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+                    <div class="absolute -right-1.5 -top-1 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8]"></div>
+
+                    <div class="circuit-line circuit-line-v absolute left-0 top-0 w-[2px] h-10"></div>
+                    <div class="circuit-line circuit-line-v absolute right-0 top-0 w-[2px] h-10"></div>
+                    <div class="circuit-line circuit-line-v absolute left-1/2 -translate-x-1/2 top-0 w-[2px] h-10"></div>
+                </div>
+
+                <!-- ================= TIER 2: BACKEND & DEVOPS ================= -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 relative md:mt-10 items-stretch">
+                    
+                    <div class="hidden md:block circuit-line circuit-line-v absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] pointer-events-none"></div>
+
+                    <!-- BACKEND & NETWORKING -->
+                    <div class="relative group">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8] z-20"></div>
+                        <div class="glass-card rounded-2xl p-6 h-full flex flex-col items-center">
+                            <div class="flex items-center justify-between w-full mb-5 pb-3 border-b border-cyan-500/20">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 text-sm">
+                                        <i class="fa-solid fa-server"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xs font-bold tracking-[0.2em] text-amber-300 uppercase">Backend & Networking</h3>
+                                        <p class="text-[11px] text-slate-400">REST APIs, Retrofit/OkHttp & PHP</p>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 font-mono">4 Skills</span>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2.5 w-full">
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="backend" data-title="REST APIs" data-desc="Designing & integrating RESTful services"
+                            data-icon='<i class="fa-solid fa-network-wired text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-network-wired text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">REST APIs</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="backend" data-title="API & Networking " data-desc="Networking with Retrofit, Moshi, OkHttp, Ajax & JSON."
+                            data-icon='<i class="fa-solid fa-globe text-2xl text-[#f97316]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-globe text-sm text-[#f97316]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">API & Networking </span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="backend" data-title="PHP" data-desc="Server-side scripting & CMS"
+                            data-icon='<i class="fa-brands fa-php text-[#777BB4] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-php text-[#777BB4] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">PHP</span>
+                        </button>
+                                <!-- API Response Caching -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="backend" data-title="API Caching" data-desc="OkHttp & Room caching mechanisms for offline performance"
+                                    data-icon='<i class="fa-solid fa-bolt text-2xl text-[#38bdf8]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-bolt text-sm text-[#38bdf8]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">API Caching</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEVOPS, TOOLS & CMS -->
+                    <div class="relative group mt-8 md:mt-0">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8] z-20"></div>
+                        <div class="glass-card rounded-2xl p-6 h-full flex flex-col items-center">
+                            <div class="flex items-center justify-between w-full mb-5 pb-3 border-b border-cyan-500/20">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-sm">
+                                        <i class="fa-solid fa-toolbox"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xs font-bold tracking-[0.2em] text-blue-300 uppercase">DevOps, Tools & CMS</h3>
+                                        <p class="text-[11px] text-slate-400">Git, GitHub, CI/CD, Postman & WordPress</p>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 font-mono">8 Skills</span>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2.5 w-full">
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="WordPress" data-desc="Theme & plugin customization"
+                            data-icon='<i class="fa-brands fa-wordpress text-[#21759B] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-wordpress text-[#21759B] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">WordPress</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="Git" data-desc="Version control fundamentals"
+                            data-icon='<i class="fa-brands fa-git-alt text-[#F05032] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-git-alt text-[#F05032] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Git</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="GitHub" data-desc="Repos, actions & PR reviews"
+                            data-icon='<i class="fa-brands fa-github text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-github text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">GitHub</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="GitLab" data-desc="CI / DevOps pipelines"
+                            data-icon='<i class="fa-brands fa-gitlab text-[#FC6D26] text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-gitlab text-[#FC6D26] text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">GitLab</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="Postman" data-desc="API testing & collections"
+                            data-icon='<i class="fa-solid fa-paper-plane text-2xl text-[#ff6c37]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-paper-plane text-sm text-[#ff6c37]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Postman</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="Slack" data-desc="Team communication and workflow integrations."
+                            data-icon='<i class="fa-brands fa-slack text-2xl text-[#4a154b]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-slack text-sm text-[#4a154b]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Slack</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="cms" data-title="Jira" data-desc="Agile project management and issue tracking."
+                            data-icon='<i class="fa-brands fa-jira text-2xl text-[#0052cc]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-jira text-sm text-[#0052cc]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Jira</span>
+                        </button>
+                                <!-- Codeberg -->
+                                <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                                    data-category="cms" data-title="Codeberg" data-desc="Open-source Git version control & repository hosting"
+                                    data-icon='<i class="fa-solid fa-code-branch text-2xl text-[#2185d0]"></i>'>
+                                    <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-code-branch text-sm text-[#2185d0]"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Codeberg</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trunk Connector down to Tier 3 -->
+                <div class="circuit-line circuit-line-v w-[2px] h-12 mx-auto"></div>
+
+                <!-- ================= TIER 3: CORE CS, ALGORITHMS & UI/UX DESIGN ================= -->
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-500/30 shadow-[0_0_10px_#38bdf8] z-20"></div>
+
+                    <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center">
+                        <div class="flex items-center justify-between w-full mb-6 pb-3 border-b border-cyan-500/20">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-sm">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xs font-bold tracking-[0.25em] text-pink-300 uppercase">Core CS, Algorithms & UI/UX Design</h3>
+                                    <p class="text-[11px] text-slate-400">90+ DSA Problem Solving, Wireframing & Agile Engineering</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/20 font-mono">13 Skills</span>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-2.5 w-full">
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Localization" data-desc="i18n & translations"
+                            data-icon='<i class="fa-solid fa-globe text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-globe text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Localization</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Navigation" data-desc="In-app & web navigation patterns"
+                            data-icon='<i class="fa-solid fa-map-signs text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-map-signs text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Navigation</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="UI/UX Design" data-desc="Efficient UI design, localization, and navigation logic."
+                            data-icon='<i class="fa-solid fa-pen-ruler text-2xl text-[#a78bfa]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-pen-ruler text-sm text-[#a78bfa]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">UI/UX Design</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Logic & Algorithms" data-desc="Data structures, algorithms, and advanced problem solving."
+                            data-icon='<i class="fa-solid fa-brain text-2xl text-[#db2777]"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-brain text-sm text-[#db2777]"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Logic & Algorithms</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Coding Proficiency" data-desc="Clean, readable & tested code"
+                            data-icon='<i class="fa-solid fa-code text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-code text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Coding Proficiency</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Motivation" data-desc="Self-driven & continuous learning"
+                            data-icon='<i class="fa-solid fa-award text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-award text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Motivation</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Collaboration" data-desc="Teamwork & communication"
+                            data-icon='<i class="fa-solid fa-people-group text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-people-group text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Collaboration</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Communication" data-desc="Client & team communication"
+                            data-icon='<i class="fa-solid fa-comments text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-comments text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Communication</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Client Interaction" data-desc="Requirement gathering & demos"
+                            data-icon='<i class="fa-solid fa-handshake text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-handshake text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Client Interaction</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Time Management" data-desc="Deliverables & deadlines"
+                            data-icon='<i class="fa-solid fa-clock text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-clock text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Time Management</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Adaptability" data-desc="Learning new tools & domains"
+                            data-icon='<i class="fa-solid fa-repeat text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-repeat text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Adaptability</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Data Structures & Algorithms" data-desc="DSA fundamentals & complexity analysis"
+                            data-icon='<i class="fa-solid fa-layer-group text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-layer-group text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Data Structures & Algorithms</span>
+                        </button>
+                        <button class="skill-card group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0d1628]/85 hover:bg-[#13223f] border border-cyan-500/20 hover:border-cyan-400 text-slate-200 hover:text-white transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(56,189,248,0.4)] hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none"
+                            data-category="other" data-title="Advanced Libraries" data-desc="Using proven libraries & frameworks"
+                            data-icon='<i class="fa-solid fa-book-open text-2xl"></i>'>
+                            <div class="w-6 h-6 rounded flex items-center justify-center bg-white/5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-book-open text-sm"></i>
+                            </div>
+                            <span class="text-xs font-semibold tracking-wide whitespace-nowrap">Advanced Libraries</span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
