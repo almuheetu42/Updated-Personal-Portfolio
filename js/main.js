@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
             // ===================================
             // 0. THEME TOGGLE (NEW)
@@ -9,8 +9,11 @@
             const moonIcon = 'fa-moon';
 
             function updateThemeIcon(isLight) {
-                const newIcon = isLight ? sunIcon : moonIcon;
-                const oldIcon = isLight ? moonIcon : sunIcon;
+                // When light mode is active, show moon icon (to switch to dark)
+                // When dark mode is active, show sun icon (to switch to light)
+                const newIcon = isLight ? moonIcon : sunIcon;
+                const oldIcon = isLight ? sunIcon : moonIcon;
+                const label = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
                 
                 const desktopIcon = themeToggleDesktop ? themeToggleDesktop.querySelector('i') : null;
                 const mobileIcon = themeToggleMobile ? themeToggleMobile.querySelector('i') : null;
@@ -23,23 +26,51 @@
                     mobileIcon.classList.remove(oldIcon);
                     mobileIcon.classList.add(newIcon);
                 }
+
+                if (themeToggleDesktop) {
+                    themeToggleDesktop.setAttribute('aria-label', label);
+                    themeToggleDesktop.setAttribute('title', label);
+                }
+                if (themeToggleMobile) {
+                    themeToggleMobile.setAttribute('aria-label', label);
+                    themeToggleMobile.setAttribute('title', label);
+                }
             }
 
-            // Set initial icon on page load
-            updateThemeIcon(document.body.classList.contains('light-mode'));
+            // Set initial icon and sync state on page load
+            const initialIsLight = localStorage.getItem('theme') === 'light';
+            if (initialIsLight) {
+                document.documentElement.classList.add('light');
+                document.documentElement.classList.remove('dark');
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                document.body.classList.add('dark');
+                document.body.classList.remove('light-mode');
+            }
+            updateThemeIcon(initialIsLight);
 
             const handleThemeToggle = () => {
-                document.body.classList.toggle('light-mode');
-                document.body.classList.toggle('dark');
-                const isLight = document.body.classList.contains('light-mode');
-                
-                if (isLight) {
+                const isCurrentlyLight = document.documentElement.classList.contains('light') || document.body.classList.contains('light-mode');
+                const nextIsLight = !isCurrentlyLight;
+
+                if (nextIsLight) {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light-mode');
                     localStorage.setItem('theme', 'light');
                 } else {
-                    localStorage.removeItem('theme');
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.classList.add('dark');
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
                 }
-                
-                updateThemeIcon(isLight);
+
+                updateThemeIcon(nextIsLight);
             };
 
             if(themeToggleDesktop) themeToggleDesktop.addEventListener('click', handleThemeToggle);
@@ -63,17 +94,149 @@
                 item.addEventListener('mouseleave', () => item.classList.remove('active'));
             });
 
-            // Mobile Menu
+            // Mobile Menu & Dropdowns
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
+            const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+            const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+            const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
 
-            if(btn && menu){
+            if (mobileDropdownBtn && mobileDropdownMenu) {
+                mobileDropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = mobileDropdownMenu.classList.toggle('hidden');
+                    const expanded = !isHidden;
+                    mobileDropdownBtn.setAttribute('aria-expanded', expanded.toString());
+                    if (mobileDropdownIcon) {
+                        mobileDropdownIcon.classList.toggle('rotate-180', expanded);
+                    }
+                });
+            }
+
+            if (btn && menu) {
                 btn.addEventListener('click', () => {
                     menu.classList.toggle('hidden');
                 });
                 menu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                       menu.classList.add('hidden'); 
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Desktop Resume Dropdown Click / Touch toggle
+            const resumeDropdownBtn = document.getElementById('resume-dropdown-btn');
+            const navDropdown = document.querySelector('.nav-dropdown');
+
+            if (resumeDropdownBtn && navDropdown) {
+                resumeDropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = navDropdown.classList.toggle('open');
+                    resumeDropdownBtn.setAttribute('aria-expanded', isOpen.toString());
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navDropdown.contains(e.target)) {
+                        navDropdown.classList.remove('open');
+                        resumeDropdownBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                navDropdown.querySelectorAll('a').forEach(item => {
+                    item.addEventListener('click', () => {
+                        navDropdown.classList.remove('open');
+                        resumeDropdownBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // ===================================
+            // SCROLLSPY (INTERSECTION OBSERVER)
+            // ===================================
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Map each unique in-page section matching a nav link href
+            const sectionMap = new Map();
+            navLinks.forEach(link => {
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                    const section = document.querySelector(targetId);
+                    if (section && !sectionMap.has(targetId)) {
+                        sectionMap.set(targetId, section);
+                    }
+                }
+            });
+
+            const spySections = Array.from(sectionMap.values());
+            const resumeSections = ['skills', 'education', 'courses', 'experience', 'achievements'];
+
+            function setActiveLink(sectionId) {
+                const isResumeActive = resumeSections.includes(sectionId);
+
+                // Highlight Resume dropdown button when a child section is active
+                document.querySelectorAll('#resume-dropdown-btn, #mobile-dropdown-btn').forEach(btn => {
+                    if (isResumeActive) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            if (spySections.length > 0) {
+                // IntersectionObserver for high-performance section tracking
+                // -80px top offset accounts for sticky navbar
+                // -60% bottom offset triggers when the section enters the reading zone
+                const scrollSpyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveLink(entry.target.id);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '-80px 0px -60% 0px',
+                    threshold: 0
+                });
+
+                spySections.forEach(sec => scrollSpyObserver.observe(sec));
+
+                // Bottom of page detection (activates the final section when page cannot scroll further)
+                window.addEventListener('scroll', () => {
+                    const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 10);
+                    if (atBottom) {
+                        const lastSection = spySections[spySections.length - 1];
+                        if (lastSection) {
+                            setActiveLink(lastSection.id);
+                        }
+                    }
+                }, { passive: true });
+
+                // Smooth scrolling click handler with instant active update
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const targetId = link.getAttribute('href');
+                        if (targetId && targetId.startsWith('#') && targetId.length > 1) {
+                            const targetSection = document.querySelector(targetId);
+                            if (targetSection) {
+                                e.preventDefault();
+                                targetSection.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                                setActiveLink(targetId.substring(1));
+                                history.pushState(null, '', targetId);
+                            }
+                        }
                     });
                 });
             }
@@ -221,40 +384,6 @@
                     window.filterSkills(category, tabBtn);
                 });
             });
-
-            // Nav active section highlight
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            const sections = [...navLinks]
-                .map(link => document.querySelector(link.getAttribute('href')))
-                .filter(Boolean);
-
-            function updateActiveNavLink() {
-                let currentSectionId = sections[0]?.id || '';
-
-                sections.forEach(section => {
-                    const top = section.offsetTop - 120;
-                    const bottom = top + section.offsetHeight;
-                    if (window.scrollY >= top && window.scrollY < bottom) {
-                        currentSectionId = section.id;
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    const isActive = link.getAttribute('href') === `#${currentSectionId}`;
-                    link.classList.toggle('active', isActive);
-
-                    if (link.closest('#mobile-menu')) {
-                        link.classList.toggle('bg-gray-700', isActive);
-                        link.classList.toggle('text-white', isActive);
-                        link.classList.toggle('text-yellow-400', isActive);
-                    } else {
-                        link.classList.toggle('text-yellow-400', isActive);
-                    }
-                });
-            }
-
-            updateActiveNavLink();
-            window.addEventListener('scroll', updateActiveNavLink);
 
             // ===================================
             // 4. PORTFOLIO TAB FILTERING & SHOW MORE
