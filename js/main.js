@@ -94,17 +94,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('mouseleave', () => item.classList.remove('active'));
             });
 
-            // Mobile Menu
+            // Mobile Menu & Dropdowns
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
+            const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+            const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+            const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
 
-            if(btn && menu){
+            if (mobileDropdownBtn && mobileDropdownMenu) {
+                mobileDropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = mobileDropdownMenu.classList.toggle('hidden');
+                    const expanded = !isHidden;
+                    mobileDropdownBtn.setAttribute('aria-expanded', expanded.toString());
+                    if (mobileDropdownIcon) {
+                        mobileDropdownIcon.classList.toggle('rotate-180', expanded);
+                    }
+                });
+            }
+
+            if (btn && menu) {
                 btn.addEventListener('click', () => {
                     menu.classList.toggle('hidden');
                 });
                 menu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                       menu.classList.add('hidden'); 
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Desktop Resume Dropdown Click / Touch toggle
+            const resumeDropdownBtn = document.getElementById('resume-dropdown-btn');
+            const navDropdown = document.querySelector('.nav-dropdown');
+
+            if (resumeDropdownBtn && navDropdown) {
+                resumeDropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = navDropdown.classList.toggle('open');
+                    resumeDropdownBtn.setAttribute('aria-expanded', isOpen.toString());
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navDropdown.contains(e.target)) {
+                        navDropdown.classList.remove('open');
+                        resumeDropdownBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                navDropdown.querySelectorAll('a').forEach(item => {
+                    item.addEventListener('click', () => {
+                        navDropdown.classList.remove('open');
+                        resumeDropdownBtn.setAttribute('aria-expanded', 'false');
                     });
                 });
             }
@@ -127,8 +168,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const spySections = Array.from(sectionMap.values());
+            const resumeSections = ['skills', 'education', 'courses', 'experience', 'achievements'];
 
             function setActiveLink(sectionId) {
+                const isResumeActive = resumeSections.includes(sectionId);
+
+                // Highlight Resume dropdown button when a child section is active
+                document.querySelectorAll('#resume-dropdown-btn, #mobile-dropdown-btn').forEach(btn => {
+                    if (isResumeActive) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href');
                     if (href === `#${sectionId}`) {
