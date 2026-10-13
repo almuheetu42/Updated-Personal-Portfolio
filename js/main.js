@@ -490,5 +490,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             }
+
+            // ===================================
+            // 7. DYNAMIC EXPERIENCE TENURE CALCULATOR
+            // ===================================
+            const softzinoTenureElements = document.querySelectorAll('.softzino-tenure');
+            if (softzinoTenureElements.length > 0) {
+                const startDate = new Date(2024, 4, 5); // 05 May 2024
+                const now = new Date();
+                let years = now.getFullYear() - startDate.getFullYear();
+                let months = now.getMonth() - startDate.getMonth();
+                if (now.getDate() < startDate.getDate()) {
+                    months--;
+                }
+                if (months < 0) {
+                    years--;
+                    months += 12;
+                }
+
+                let durationText = '';
+                if (years > 0 && months > 0) {
+                    durationText = `${years} yr${years > 1 ? 's' : ''} ${months} mo${months > 1 ? 's' : ''}+`;
+                } else if (years > 0) {
+                    durationText = `${years} yr${years > 1 ? 's' : ''}+`;
+                } else {
+                    durationText = `${months} mo${months > 1 ? 's' : ''}+`;
+                }
+
+                softzinoTenureElements.forEach(el => {
+                    el.textContent = `Present • ${durationText}`;
+                });
+            }
         });
 
